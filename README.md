@@ -59,7 +59,7 @@ Caveats: 39 queries / ~900 chunks is a directional gate, not a statistical bench
 
 ### Benchmark results
 
-Per-query top hits (scores + winning lane) for both benches are in [`bench/`](bench/): `results-en-*.json` (39 queries, ~935-chunk agent-memory corpus, three models) and `results-cjk-*.json` (22 queries, two models). Paths and personal values in the data are generalized; the query set includes exact identifiers, value→fact reverse lookups, paraphrase, typos, multi-hop, negative controls (absent topics), and CJK.
+Per-query top hits (scores + winning lane) for both benches are in [`bench/`](bench/): readable as [en-bench.md](bench/en-bench.md) (39 queries, ~935-chunk agent-memory corpus, three models) and [cjk-bench.md](bench/cjk-bench.md) (22 queries, two models), machine-readable as `results-*.json`. Doc names are basenames only and personal values in the queries are generalized; the query set includes exact identifiers, value→fact reverse lookups, paraphrase, typos, multi-hop, negative controls (absent topics), and CJK.
 
 **English gate (39 queries):** quality was a near-tie — ~31/34 top-2 for Qwen3 and EmbeddingGemma, ~27/34 for bge-small — because the hybrid FTS lane carries exact/identifier matches regardless of model. The differentiators: CJK (Qwen3-only), one pitfall-note recall (Gemma-only), and index speed (bge 10×).
 

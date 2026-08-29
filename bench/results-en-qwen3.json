@@ -11,27 +11,27 @@
    "ms": 29,
    "hits": [
     {
-     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "p": "2026-08-28.md",
      "s": 2.696,
      "l": "fts"
     },
     {
-     "p": "~/pi-learning/memory.md",
+     "p": "memory.md",
      "s": 1.996,
      "l": "fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/WSL2/yazi-summary.md",
+     "p": "yazi-summary.md",
      "s": 0.637,
      "l": "vec"
     },
     {
-     "p": "vault/20_Knowledge/Programming/WSL2/yazi-keyboard-cheatsheet.md",
+     "p": "yazi-keyboard-cheatsheet.md",
      "s": 0.608,
      "l": "vec"
     },
     {
-     "p": "vault/00_Dashboard.md",
+     "p": "00_Dashboard.md",
      "s": 0.588,
      "l": "vec"
     }
@@ -43,27 +43,27 @@
    "ms": 26,
    "hits": [
     {
-     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "p": "2026-08-29.md",
      "s": 3.751,
      "l": "fts"
     },
     {
-     "p": "~/pi-learning/memory-wiki/llms.md",
+     "p": "llms.md",
      "s": 0.735,
      "l": "vec"
     },
     {
-     "p": "~/pi-learning/memory.md",
+     "p": "memory.md",
      "s": 0.735,
      "l": "vec"
     },
     {
-     "p": "~/ai_write/memory-wiki/llms.md",
+     "p": "llms.md",
      "s": 0.711,
      "l": "vec"
     },
     {
-     "p": "~/book-editing/memory-wiki/llms.md",
+     "p": "llms.md",
      "s": 0.707,
      "l": "vec"
     }
@@ -75,27 +75,27 @@
    "ms": 40,
    "hits": [
     {
-     "p": "vault/Daily/2026-08-24.md",
+     "p": "2026-08-24.md",
      "s": 0.7,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/WSL2/ssh-wsl2-pi-box.md",
+     "p": "ssh-wsl2-pi-box.md",
      "s": 0.722,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-wiki/ssh.md",
+     "p": "ssh.md",
      "s": 0.684,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-wiki/ssh.md",
+     "p": "ssh.md",
      "s": 0.723,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/WSL2/ssh-wsl2-pi-box.md",
+     "p": "ssh-wsl2-pi-box.md",
      "s": 0.808,
      "l": "vec,fts"
     }
@@ -107,27 +107,27 @@
    "ms": 37,
    "hits": [
     {
-     "p": "~/pi-learning/memory-wiki/llms.md",
+     "p": "llms.md",
      "s": 0.558,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-wiki/ssh.md",
+     "p": "ssh.md",
      "s": 0.55,
      "l": "vec,fts"
     },
     {
-     "p": "vault/Daily/2026-08-24.md",
+     "p": "2026-08-24.md",
      "s": 0.511,
      "l": "vec,fts"
     },
     {
-     "p": "vault/Daily/2026-08-24.md",
+     "p": "2026-08-24.md",
      "s": 0.437,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/WSL2/ssh-wsl2-pi-box.md",
+     "p": "ssh-wsl2-pi-box.md",
      "s": 0.561,
      "l": "vec,fts"
     }
@@ -139,27 +139,27 @@
    "ms": 39,
    "hits": [
     {
-     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "p": "2026-08-28.md",
      "s": 0.608,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "p": "2026-08-28.md",
      "s": 0.594,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory.md",
+     "p": "memory.md",
      "s": 0.522,
      "l": "vec,fts"
     },
     {
-     "p": "vault/40_Resource/Links.md",
+     "p": "Links.md",
      "s": 0.512,
      "l": "vec,fts"
     },
     {
-     "p": "vault/Daily/2026-03-31.md",
+     "p": "2026-03-31.md",
      "s": 0.498,
      "l": "vec,fts"
     }
@@ -171,27 +171,27 @@
    "ms": 48,
    "hits": [
     {
-     "p": "~/pi-learning/memory-wiki/box.md",
+     "p": "box.md",
      "s": 0.576,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/Openclaw/openclaw-memory-management.md",
+     "p": "openclaw-memory-management.md",
      "s": 0.513,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "p": "2026-08-28.md",
      "s": 0.463,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-wiki/box.md",
+     "p": "box.md",
      "s": 0.471,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/Openclaw/openclaw-memory-management.md",
+     "p": "openclaw-memory-management.md",
      "s": 14.074,
      "l": "fts"
     }
@@ -203,27 +203,27 @@
    "ms": 25,
    "hits": [
     {
-     "p": "vault/20_Knowledge/Food Recipe/椒麻雞 Sichuan Style Chicken and spicy sweet and sour sauce.md",
+     "p": "椒麻雞 Sichuan Style Chicken and spicy sweet and sour sauce.md",
      "s": 0.779,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Food Recipe/照燒雞 Teriyaki Chicken.md",
+     "p": "照燒雞 Teriyaki Chicken.md",
      "s": 0.589,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Food Recipe/椒麻雞 Sichuan Style Chicken and spicy sweet and sour sauce.md",
+     "p": "椒麻雞 Sichuan Style Chicken and spicy sweet and sour sauce.md",
      "s": 0.579,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Food Recipe/Prima Taste Singapore Curry.md",
+     "p": "Prima Taste Singapore Curry.md",
      "s": 0.556,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Food Recipe/orange-chicken.md",
+     "p": "orange-chicken.md",
      "s": 0.585,
      "l": "vec,fts"
     }
@@ -235,27 +235,27 @@
    "ms": 26,
    "hits": [
     {
-     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "p": "2026-08-29.md",
      "s": 6.365,
      "l": "fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/WSL2/yazi-summary.md",
+     "p": "yazi-summary.md",
      "s": 0.607,
      "l": "vec"
     },
     {
-     "p": "vault/20_Knowledge/Programming/Openclaw/lossless-claw plugin.md",
+     "p": "lossless-claw plugin.md",
      "s": 5.783,
      "l": "fts"
     },
     {
-     "p": "vault/10_Projects/Bathroom Renovation/Kanban Bathroom Reno.md",
+     "p": "Kanban Bathroom Reno.md",
      "s": 0.601,
      "l": "vec"
     },
     {
-     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "p": "2026-08-28.md",
      "s": 5.426,
      "l": "fts"
     }
@@ -267,27 +267,27 @@
    "ms": 34,
    "hits": [
     {
-     "p": "~/book-editing/memory-wiki/epub.md",
+     "p": "epub.md",
      "s": 0.637,
      "l": "vec,fts"
     },
     {
-     "p": "~/book-editing/memory-wiki/llms.md",
+     "p": "llms.md",
      "s": 0.518,
      "l": "vec,fts"
     },
     {
-     "p": "~/book-editing/memory.md",
+     "p": "memory.md",
      "s": 0.489,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "p": "2026-08-29.md",
      "s": 10.193,
      "l": "fts"
     },
     {
-     "p": "~/book-editing/memory-wiki/llms.md",
+     "p": "llms.md",
      "s": 0.601,
      "l": "vec"
     }
@@ -299,27 +299,27 @@
    "ms": 34,
    "hits": [
     {
-     "p": "~/pi-learning/memory-wiki/box.md",
+     "p": "box.md",
      "s": 0.683,
      "l": "vec,fts"
     },
     {
-     "p": "~/ai_write/memory-wiki/mcp.md",
+     "p": "mcp.md",
      "s": 0.695,
      "l": "vec,fts"
     },
     {
-     "p": "~/ai_write/memory-wiki/mcp.md",
+     "p": "mcp.md",
      "s": 0.536,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory.md",
+     "p": "memory.md",
      "s": 0.541,
      "l": "vec,fts"
     },
     {
-     "p": "~/ai_write/memory-wiki/mcp.md",
+     "p": "mcp.md",
      "s": 0.657,
      "l": "vec,fts"
     }
@@ -331,27 +331,27 @@
    "ms": 38,
    "hits": [
     {
-     "p": "~/pi-learning/memory-wiki/box.md",
+     "p": "box.md",
      "s": 0.572,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "p": "2026-08-28.md",
      "s": 0.545,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-wiki/box.md",
+     "p": "box.md",
      "s": 0.536,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "p": "2026-08-29.md",
      "s": 0.542,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "p": "2026-08-29.md",
      "s": 0.586,
      "l": "vec,fts"
     }
@@ -363,27 +363,27 @@
    "ms": 35,
    "hits": [
     {
-     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "p": "2026-08-29.md",
      "s": 0.666,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-wiki/box.md",
+     "p": "box.md",
      "s": 0.621,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-wiki/box.md",
+     "p": "box.md",
      "s": 0.553,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "p": "2026-08-29.md",
      "s": 0.63,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-wiki/llms.md",
+     "p": "llms.md",
      "s": 0.559,
      "l": "vec,fts"
     }
@@ -395,27 +395,27 @@
    "ms": 37,
    "hits": [
     {
-     "p": "vault/50_Templates/Areas.md",
+     "p": "Areas.md",
      "s": 0.481,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/Openclaw/openclaw-memory-management.md",
+     "p": "openclaw-memory-management.md",
      "s": 0.423,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "p": "2026-08-29.md",
      "s": 9.532,
      "l": "fts"
     },
     {
-     "p": "vault/10_Projects/Bathroom Renovation/Kanban Bathroom Reno.md",
+     "p": "Kanban Bathroom Reno.md",
      "s": 0.55,
      "l": "vec"
     },
     {
-     "p": "~/book-editing/memory-wiki/llms.md",
+     "p": "llms.md",
      "s": 8.791,
      "l": "fts"
     }
@@ -427,27 +427,27 @@
    "ms": 40,
    "hits": [
     {
-     "p": "~/pi-learning/memory-daily/archive/2026-08-28.md",
+     "p": "2026-08-28.md",
      "s": 0.562,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/Openclaw/lossless-claw plugin.md",
+     "p": "lossless-claw plugin.md",
      "s": 0.535,
      "l": "vec,fts"
     },
     {
-     "p": "vault/50_Templates/Areas.md",
+     "p": "Areas.md",
      "s": 0.436,
      "l": "vec,fts"
     },
     {
-     "p": "vault/10_Projects/Openclaw/openclaw timeline.md",
+     "p": "openclaw timeline.md",
      "s": 0.485,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/Openclaw/openclaw-memory-management.md",
+     "p": "openclaw-memory-management.md",
      "s": 0.454,
      "l": "vec,fts"
     }
@@ -459,27 +459,27 @@
    "ms": 44,
    "hits": [
     {
-     "p": "~/pi-learning/memory.md",
+     "p": "memory.md",
      "s": 0.586,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "p": "2026-08-28.md",
      "s": 0.637,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/WSL2/yazi-summary.md",
+     "p": "yazi-summary.md",
      "s": 0.518,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-wiki/box.md",
+     "p": "box.md",
      "s": 0.561,
      "l": "vec,fts"
     },
     {
-     "p": "~/ai_write/memory-wiki/llms.md",
+     "p": "llms.md",
      "s": 0.539,
      "l": "vec,fts"
     }
@@ -491,27 +491,27 @@
    "ms": 31,
    "hits": [
     {
-     "p": "vault/50_Templates/Areas.md",
+     "p": "Areas.md",
      "s": 0.438,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/Github/GitHub + Obsidian in WSL2 — Step-by-Step Guide.md",
+     "p": "GitHub + Obsidian in WSL2 — Step-by-Step Guide.md",
      "s": 8.494,
      "l": "fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/WSL2/yazi-summary.md",
+     "p": "yazi-summary.md",
      "s": 0.524,
      "l": "vec"
     },
     {
-     "p": "vault/20_Knowledge/Programming/Github/GitHub + Obsidian in WSL2 — Step-by-Step Guide.md",
+     "p": "GitHub + Obsidian in WSL2 — Step-by-Step Guide.md",
      "s": 7.717,
      "l": "fts"
     },
     {
-     "p": "~/ai_write/memory-wiki/llms.md",
+     "p": "llms.md",
      "s": 0.509,
      "l": "vec"
     }
@@ -523,27 +523,27 @@
    "ms": 38,
    "hits": [
     {
-     "p": "vault/Clippings/Thread by @karpathy.md",
+     "p": "Thread by @karpathy.md",
      "s": 10.079,
      "l": "fts"
     },
     {
-     "p": "vault/Daily/2026-06-26.md",
+     "p": "2026-06-26.md",
      "s": 0.395,
      "l": "vec"
     },
     {
-     "p": "vault/Clippings/Thread by @karpathy.md",
+     "p": "Thread by @karpathy.md",
      "s": 7.475,
      "l": "fts"
     },
     {
-     "p": "vault/10_Projects/Bathroom Renovation.md",
+     "p": "Bathroom Renovation.md",
      "s": 0.379,
      "l": "vec"
     },
     {
-     "p": "vault/10_Projects/Openclaw/openclaw journey.md",
+     "p": "openclaw journey.md",
      "s": 7.469,
      "l": "fts"
     }
@@ -555,27 +555,27 @@
    "ms": 40,
    "hits": [
     {
-     "p": "vault/10_Projects/Openclaw/openclaw session timeline.md",
+     "p": "openclaw session timeline.md",
      "s": 0.471,
      "l": "vec,fts"
     },
     {
-     "p": "vault/50_Templates/Areas.md",
+     "p": "Areas.md",
      "s": 0.399,
      "l": "vec,fts"
     },
     {
-     "p": "vault/Clippings/llm-wiki.md",
+     "p": "llm-wiki.md",
      "s": 9.138,
      "l": "fts"
     },
     {
-     "p": "vault/00_Dashboard.md",
+     "p": "00_Dashboard.md",
      "s": 0.484,
      "l": "vec"
     },
     {
-     "p": "vault/Clippings/Mastering llama.cpp A Comprehensive Guide to Local LLM Integration.md",
+     "p": "Mastering llama.cpp A Comprehensive Guide to Local LLM Integration.md",
      "s": 7.951,
      "l": "fts"
     }
@@ -587,27 +587,27 @@
    "ms": 23,
    "hits": [
     {
-     "p": "vault/20_Knowledge/Programming/WSL2/tmux-split-screen.md",
+     "p": "tmux-split-screen.md",
      "s": 8.492,
      "l": "fts"
     },
     {
-     "p": "vault/10_Projects/Bathroom Renovation/Kanban Bathroom Reno.md",
+     "p": "Kanban Bathroom Reno.md",
      "s": 0.613,
      "l": "vec"
     },
     {
-     "p": "vault/20_Knowledge/Programming/WSL2/tmux-split-screen.md",
+     "p": "tmux-split-screen.md",
      "s": 8.3,
      "l": "fts"
     },
     {
-     "p": "vault/Daily/2026-04-06.md",
+     "p": "2026-04-06.md",
      "s": 0.599,
      "l": "vec"
     },
     {
-     "p": "vault/20_Knowledge/Programming/WSL2/tmux-split-screen.md",
+     "p": "tmux-split-screen.md",
      "s": 8.3,
      "l": "fts"
     }
@@ -619,27 +619,27 @@
    "ms": 23,
    "hits": [
     {
-     "p": "~/pi-learning/memory-daily/archive/2026-08-28.md",
+     "p": "2026-08-28.md",
      "s": 6.157,
      "l": "fts"
     },
     {
-     "p": "vault/10_Projects/Bathroom Renovation/Kanban Bathroom Reno.md",
+     "p": "Kanban Bathroom Reno.md",
      "s": 0.605,
      "l": "vec"
     },
     {
-     "p": "~/pi-learning/memory-wiki/box.md",
+     "p": "box.md",
      "s": 5.53,
      "l": "fts"
     },
     {
-     "p": "vault/Daily/2026-04-06.md",
+     "p": "2026-04-06.md",
      "s": 0.602,
      "l": "vec"
     },
     {
-     "p": "vault/20_Knowledge/Programming/LLM/llama-cpp - LLM models configurations.md",
+     "p": "llama-cpp - LLM models configurations.md",
      "s": 4.73,
      "l": "fts"
     }
@@ -651,27 +651,27 @@
    "ms": 22,
    "hits": [
     {
-     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "p": "2026-08-28.md",
      "s": 6.734,
      "l": "fts"
     },
     {
-     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "p": "2026-08-29.md",
      "s": 0.553,
      "l": "vec"
     },
     {
-     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "p": "2026-08-28.md",
      "s": 4.384,
      "l": "fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/WSL2/yazi-summary.md",
+     "p": "yazi-summary.md",
      "s": 0.55,
      "l": "vec"
     },
     {
-     "p": "~/pi-learning/memory.md",
+     "p": "memory.md",
      "s": 1.882,
      "l": "fts"
     }
@@ -683,27 +683,27 @@
    "ms": 32,
    "hits": [
     {
-     "p": "~/pi-learning/memory.md",
+     "p": "memory.md",
      "s": 0.568,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-daily/archive/2026-08-28.md",
+     "p": "2026-08-28.md",
      "s": 4.844,
      "l": "fts"
     },
     {
-     "p": "~/ai_write/memory-wiki/mcp.md",
+     "p": "mcp.md",
      "s": 4.453,
      "l": "fts"
     },
     {
-     "p": "~/ai_write/memory-wiki/llms.md",
+     "p": "llms.md",
      "s": 4.02,
      "l": "fts"
     },
     {
-     "p": "~/ai_write/memory-wiki/mcp.md",
+     "p": "mcp.md",
      "s": 4.02,
      "l": "fts"
     }
@@ -715,27 +715,27 @@
    "ms": 45,
    "hits": [
     {
-     "p": "vault/20_Knowledge/Programming/WSL2/ssh-wsl2-pi-box.md",
+     "p": "ssh-wsl2-pi-box.md",
      "s": 19.874,
      "l": "fts"
     },
     {
-     "p": "~/pi-learning/memory-wiki/ssh.md",
+     "p": "ssh.md",
      "s": 17.245,
      "l": "fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/WSL2/ssh-wsl2-pi-box.md",
+     "p": "ssh-wsl2-pi-box.md",
      "s": 16.885,
      "l": "fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/WSL2/ssh-wsl2-pi-box.md",
+     "p": "ssh-wsl2-pi-box.md",
      "s": 11.298,
      "l": "fts"
     },
     {
-     "p": "~/pi-learning/memory-wiki/ssh.md",
+     "p": "ssh.md",
      "s": 10.4,
      "l": "fts"
     }
@@ -747,27 +747,27 @@
    "ms": 35,
    "hits": [
     {
-     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "p": "2026-08-29.md",
      "s": 10.824,
      "l": "fts"
     },
     {
-     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "p": "2026-08-29.md",
      "s": 5.637,
      "l": "fts"
     },
     {
-     "p": "~/pi-learning/memory-wiki/box.md",
+     "p": "box.md",
      "s": 3.384,
      "l": "fts"
     },
     {
-     "p": "vault/10_Projects/Openclaw/Qwen3.8-27B Thinking Control.md",
+     "p": "Qwen3.8-27B Thinking Control.md",
      "s": 0.476,
      "l": "vec,fts"
     },
     {
-     "p": "vault/Daily/2026-08-13.md",
+     "p": "2026-08-13.md",
      "s": 0.573,
      "l": "vec"
     }
@@ -779,27 +779,27 @@
    "ms": 47,
    "hits": [
     {
-     "p": "~/pi-learning/memory-wiki/llms.md",
+     "p": "llms.md",
      "s": 0.661,
      "l": "vec,fts"
     },
     {
-     "p": "vault/Daily/2026-08-24.md",
+     "p": "2026-08-24.md",
      "s": 0.634,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/WSL2/ssh-wsl2-pi-box.md",
+     "p": "ssh-wsl2-pi-box.md",
      "s": 0.644,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-wiki/box.md",
+     "p": "box.md",
      "s": 0.657,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-wiki/ssh.md",
+     "p": "ssh.md",
      "s": 0.576,
      "l": "vec,fts"
     }
@@ -811,27 +811,27 @@
    "ms": 38,
    "hits": [
     {
-     "p": "~/ai_write/memory-wiki/mcp.md",
+     "p": "mcp.md",
      "s": 0.659,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-wiki/box.md",
+     "p": "box.md",
      "s": 0.599,
      "l": "vec,fts"
     },
     {
-     "p": "~/ai_write/memory-wiki/mcp.md",
+     "p": "mcp.md",
      "s": 0.602,
      "l": "vec,fts"
     },
     {
-     "p": "~/ai_write/memory-wiki/llms.md",
+     "p": "llms.md",
      "s": 0.59,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory.md",
+     "p": "memory.md",
      "s": 0.576,
      "l": "vec,fts"
     }
@@ -843,27 +843,27 @@
    "ms": 29,
    "hits": [
     {
-     "p": "vault/10_Projects/Openclaw/Qwen3.8-27B Thinking Control.md",
+     "p": "Qwen3.8-27B Thinking Control.md",
      "s": 0.731,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory.md",
+     "p": "memory.md",
      "s": 0.752,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/LLM/llama-cpp - LLM models configurations.md",
+     "p": "llama-cpp - LLM models configurations.md",
      "s": 0.682,
      "l": "vec,fts"
     },
     {
-     "p": "vault/Daily/2026-03-09.md",
+     "p": "2026-03-09.md",
      "s": 0.675,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/LLM/llama-cpp - LLM models configurations.md",
+     "p": "llama-cpp - LLM models configurations.md",
      "s": 0.702,
      "l": "vec,fts"
     }
@@ -875,27 +875,27 @@
    "ms": 38,
    "hits": [
     {
-     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "p": "2026-08-28.md",
      "s": 0.617,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "p": "2026-08-28.md",
      "s": 0.579,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory.md",
+     "p": "memory.md",
      "s": 0.533,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "p": "2026-08-29.md",
      "s": 0.541,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "p": "2026-08-28.md",
      "s": 0.463,
      "l": "vec,fts"
     }
@@ -907,27 +907,27 @@
    "ms": 48,
    "hits": [
     {
-     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "p": "2026-08-29.md",
      "s": 0.635,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-wiki/box.md",
+     "p": "box.md",
      "s": 0.546,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/Openclaw/openclaw-memory-management.md",
+     "p": "openclaw-memory-management.md",
      "s": 0.493,
      "l": "vec,fts"
     },
     {
-     "p": "vault/Daily/2026-08-21.md",
+     "p": "2026-08-21.md",
      "s": 0.574,
      "l": "vec,fts"
     },
     {
-     "p": "vault/Research/xteink-x4-pocket-e-reader.md",
+     "p": "xteink-x4-pocket-e-reader.md",
      "s": 0.651,
      "l": "vec"
     }
@@ -939,27 +939,27 @@
    "ms": 34,
    "hits": [
     {
-     "p": "vault/Daily/2026-08-21.md",
+     "p": "2026-08-21.md",
      "s": 0.542,
      "l": "vec,fts"
     },
     {
-     "p": "~/ai_write/memory-wiki/mcp.md",
+     "p": "mcp.md",
      "s": 0.546,
      "l": "vec,fts"
     },
     {
-     "p": "vault/Daily/2026-04-02.md",
+     "p": "2026-04-02.md",
      "s": 0.603,
      "l": "vec,fts"
     },
     {
-     "p": "vault/Daily/2026-08-21.md",
+     "p": "2026-08-21.md",
      "s": 0.496,
      "l": "vec,fts"
     },
     {
-     "p": "vault/10_Projects/Openclaw/Qwen3.8-27B Thinking Control.md",
+     "p": "Qwen3.8-27B Thinking Control.md",
      "s": 0.553,
      "l": "vec,fts"
     }
@@ -971,27 +971,27 @@
    "ms": 66,
    "hits": [
     {
-     "p": "~/pi-learning/memory-wiki/box.md",
+     "p": "box.md",
      "s": 0.578,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "p": "2026-08-28.md",
      "s": 0.579,
      "l": "vec,fts"
     },
     {
-     "p": "vault/40_Resource/Links.md",
+     "p": "Links.md",
      "s": 0.55,
      "l": "vec,fts"
     },
     {
-     "p": "vault/Daily/2026-08-24.md",
+     "p": "2026-08-24.md",
      "s": 0.534,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/Github/GitHub + Obsidian in WSL2 — Step-by-Step Guide.md",
+     "p": "GitHub + Obsidian in WSL2 — Step-by-Step Guide.md",
      "s": 13.82,
      "l": "fts"
     }
@@ -1003,27 +1003,27 @@
    "ms": 57,
    "hits": [
     {
-     "p": "~/pi-learning/memory.md",
+     "p": "memory.md",
      "s": 0.618,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-wiki/box.md",
+     "p": "box.md",
      "s": 0.579,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-daily/archive/2026-08-28.md",
+     "p": "2026-08-28.md",
      "s": 0.58,
      "l": "vec,fts"
     },
     {
-     "p": "~/ai_write/memory-wiki/mcp.md",
+     "p": "mcp.md",
      "s": 0.603,
      "l": "vec,fts"
     },
     {
-     "p": "~/ai_write/memory-wiki/mcp.md",
+     "p": "mcp.md",
      "s": 0.64,
      "l": "vec,fts"
     }
@@ -1035,27 +1035,27 @@
    "ms": 42,
    "hits": [
     {
-     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "p": "2026-08-29.md",
      "s": 0.624,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/Openclaw/openclaw-memory-management.md",
+     "p": "openclaw-memory-management.md",
      "s": 0.486,
      "l": "vec,fts"
     },
     {
-     "p": "vault/Clippings/How to Get Started with darktable, 2026 Edition.md",
+     "p": "How to Get Started with darktable, 2026 Edition.md",
      "s": 0.472,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/WSL2/yazi-summary.md",
+     "p": "yazi-summary.md",
      "s": 16.475,
      "l": "fts"
     },
     {
-     "p": "vault/50_Templates/Areas.md",
+     "p": "Areas.md",
      "s": 14.849,
      "l": "fts"
     }
@@ -1067,27 +1067,27 @@
    "ms": 30,
    "hits": [
     {
-     "p": "~/pi-learning/memory.md",
+     "p": "memory.md",
      "s": 0.584,
      "l": "vec,fts"
     },
     {
-     "p": "vault/Daily/2026-08-21.md",
+     "p": "2026-08-21.md",
      "s": 0.506,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/LLM/llama-cpp - LLM models configurations.md",
+     "p": "llama-cpp - LLM models configurations.md",
      "s": 4.867,
      "l": "fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/LLM/turboquant-installation.md",
+     "p": "turboquant-installation.md",
      "s": 4.595,
      "l": "fts"
     },
     {
-     "p": "vault/10_Projects/Openclaw/Qwen3.8-27B Thinking Control.md",
+     "p": "Qwen3.8-27B Thinking Control.md",
      "s": 4.594,
      "l": "fts"
     }
@@ -1099,27 +1099,27 @@
    "ms": 45,
    "hits": [
     {
-     "p": "vault/20_Knowledge/Programming/WSL2/ssh-wsl2-pi-box.md",
+     "p": "ssh-wsl2-pi-box.md",
      "s": 15.353,
      "l": "fts"
     },
     {
-     "p": "~/pi-learning/memory-wiki/box.md",
+     "p": "box.md",
      "s": 12.18,
      "l": "fts"
     },
     {
-     "p": "~/pi-learning/memory-wiki/ssh.md",
+     "p": "ssh.md",
      "s": 11.99,
      "l": "fts"
     },
     {
-     "p": "vault/Daily/2026-08-24.md",
+     "p": "2026-08-24.md",
      "s": 11.989,
      "l": "fts"
     },
     {
-     "p": "~/pi-learning/memory-wiki/ssh.md",
+     "p": "ssh.md",
      "s": 10.773,
      "l": "fts"
     }
@@ -1131,27 +1131,27 @@
    "ms": 26,
    "hits": [
     {
-     "p": "vault/20_Knowledge/Food Recipe/椒麻雞 Sichuan Style Chicken and spicy sweet and sour sauce.md",
+     "p": "椒麻雞 Sichuan Style Chicken and spicy sweet and sour sauce.md",
      "s": 0.688,
      "l": "vec"
     },
     {
-     "p": "vault/20_Knowledge/Food Recipe/Mulberry Jam Recipe.md",
+     "p": "Mulberry Jam Recipe.md",
      "s": 0.554,
      "l": "vec"
     },
     {
-     "p": "vault/20_Knowledge/Food Recipe/Instant Pot 爌肉.md",
+     "p": "Instant Pot 爌肉.md",
      "s": 0.504,
      "l": "vec"
     },
     {
-     "p": "vault/20_Knowledge/Food Recipe/椒麻雞 Sichuan Style Chicken and spicy sweet and sour sauce.md",
+     "p": "椒麻雞 Sichuan Style Chicken and spicy sweet and sour sauce.md",
      "s": 0.488,
      "l": "vec"
     },
     {
-     "p": "vault/20_Knowledge/Food Recipe/高壓鍋燉牛肉.md",
+     "p": "高壓鍋燉牛肉.md",
      "s": 0.476,
      "l": "vec"
     }
@@ -1163,27 +1163,27 @@
    "ms": 44,
    "hits": [
     {
-     "p": "~/pi-learning/memory-wiki/llms.md",
+     "p": "llms.md",
      "s": 0.612,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/WSL2/ssh-wsl2-pi-box.md",
+     "p": "ssh-wsl2-pi-box.md",
      "s": 0.594,
      "l": "vec,fts"
     },
     {
-     "p": "vault/Daily/2026-08-24.md",
+     "p": "2026-08-24.md",
      "s": 0.565,
      "l": "vec,fts"
     },
     {
-     "p": "~/pi-learning/memory-wiki/ssh.md",
+     "p": "ssh.md",
      "s": 0.532,
      "l": "vec,fts"
     },
     {
-     "p": "vault/Daily/2026-08-24.md",
+     "p": "2026-08-24.md",
      "s": 0.539,
      "l": "vec,fts"
     }
@@ -1195,27 +1195,27 @@
    "ms": 37,
    "hits": [
     {
-     "p": "vault/20_Knowledge/Programming/LLM/llama.cpp Model Management.md",
+     "p": "llama.cpp Model Management.md",
      "s": 0.749,
      "l": "vec,fts"
     },
     {
-     "p": "vault/Clippings/Mastering llama.cpp A Comprehensive Guide to Local LLM Integration.md",
+     "p": "Mastering llama.cpp A Comprehensive Guide to Local LLM Integration.md",
      "s": 0.65,
      "l": "vec,fts"
     },
     {
-     "p": "vault/10_Projects/Openclaw/Qwen3.8-27B Thinking Control.md",
+     "p": "Qwen3.8-27B Thinking Control.md",
      "s": 0.622,
      "l": "vec,fts"
     },
     {
-     "p": "vault/10_Projects/Openclaw/Qwen3.8-27B Thinking Control.md",
+     "p": "Qwen3.8-27B Thinking Control.md",
      "s": 0.619,
      "l": "vec,fts"
     },
     {
-     "p": "vault/Daily/2026-08-21.md",
+     "p": "2026-08-21.md",
      "s": 0.63,
      "l": "vec,fts"
     }
@@ -1227,27 +1227,27 @@
    "ms": 36,
    "hits": [
     {
-     "p": "vault/50_Templates/Areas.md",
+     "p": "Areas.md",
      "s": 0.438,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/WSL2/yazi-summary.md",
+     "p": "yazi-summary.md",
      "s": 0.467,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/Openclaw/openclaw-memory-management.md",
+     "p": "openclaw-memory-management.md",
      "s": 0.446,
      "l": "vec,fts"
     },
     {
-     "p": "vault/20_Knowledge/Programming/Github/GitHub + Obsidian in WSL2 — Step-by-Step Guide.md",
+     "p": "GitHub + Obsidian in WSL2 — Step-by-Step Guide.md",
      "s": 10.931,
      "l": "fts"
     },
     {
-     "p": "vault/10_Projects/Openclaw/openclaw session timeline.md",
+     "p": "openclaw session timeline.md",
      "s": 0.604,
      "l": "vec"
     }

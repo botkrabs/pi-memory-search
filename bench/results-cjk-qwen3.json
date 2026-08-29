@@ -11,27 +11,27 @@
    "ms": 31,
    "hits": [
     {
-     "p": "corpus/wikizh/狄利克雷.md",
+     "p": "狄利克雷.md",
      "s": 8.501,
      "l": "fts"
     },
     {
-     "p": "corpus/wikizh/狄利克雷.md",
+     "p": "狄利克雷.md",
      "s": 7.594,
      "l": "fts"
     },
     {
-     "p": "corpus/wikizh/狄利克雷.md",
+     "p": "狄利克雷.md",
      "s": 7.337,
      "l": "fts"
     },
     {
-     "p": "corpus/wikizh/Chenières.md",
+     "p": "Chenières.md",
      "s": 0.798,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/Chenières.md",
+     "p": "Chenières.md",
      "s": 0.754,
      "l": "vec"
     }
@@ -43,27 +43,27 @@
    "ms": 33,
    "hits": [
     {
-     "p": "corpus/wikizh/尊经.md",
+     "p": "尊经.md",
      "s": 0.619,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/柳生宗章.md",
+     "p": "柳生宗章.md",
      "s": 0.594,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/周道治.md",
+     "p": "周道治.md",
      "s": 0.591,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/斯特姆−儒格.md",
+     "p": "斯特姆−儒格.md",
      "s": 0.581,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/自由软件法律中心.md",
+     "p": "自由软件法律中心.md",
      "s": 0.578,
      "l": "vec"
     }
@@ -75,27 +75,27 @@
    "ms": 31,
    "hits": [
     {
-     "p": "corpus/wikizh/荷式鬆餅.md",
+     "p": "荷式鬆餅.md",
      "s": 6.473,
      "l": "fts"
     },
     {
-     "p": "corpus/wikizh/焦亚德尔科莱.md",
+     "p": "焦亚德尔科莱.md",
      "s": 0.642,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/焦亚德尔科莱.md",
+     "p": "焦亚德尔科莱.md",
      "s": 0.62,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/Charnizay.md",
+     "p": "Charnizay.md",
      "s": 0.606,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/Chenières.md",
+     "p": "Chenières.md",
      "s": 0.602,
      "l": "vec"
     }
@@ -107,27 +107,27 @@
    "ms": 32,
    "hits": [
     {
-     "p": "corpus/wikizh/查拉湖.md",
+     "p": "查拉湖.md",
      "s": 0.607,
      "l": "vec,fts"
     },
     {
-     "p": "corpus/wikizh/查拉湖.md",
+     "p": "查拉湖.md",
      "s": 9.178,
      "l": "fts"
     },
     {
-     "p": "corpus/wikizh/查拉湖.md",
+     "p": "查拉湖.md",
      "s": 0.738,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/Tervueren.md",
+     "p": "Tervueren.md",
      "s": 0.58,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/Charnizay.md",
+     "p": "Charnizay.md",
      "s": 0.563,
      "l": "vec"
     }
@@ -139,27 +139,27 @@
    "ms": 32,
    "hits": [
     {
-     "p": "corpus/wikizh/2010南京化工厂爆炸事件.md",
+     "p": "2010南京化工厂爆炸事件.md",
      "s": 0.597,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/溴化砈.md",
+     "p": "溴化砈.md",
      "s": 0.532,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/路環市政街市.md",
+     "p": "路環市政街市.md",
      "s": 0.519,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/丙酸乙酯.md",
+     "p": "丙酸乙酯.md",
      "s": 0.514,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/Cyc.md",
+     "p": "Cyc.md",
      "s": 0.502,
      "l": "vec"
     }
@@ -171,27 +171,27 @@
    "ms": 39,
    "hits": [
     {
-     "p": "corpus/wikizh/狄利克雷.md",
+     "p": "狄利克雷.md",
      "s": 0.789,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/狄利克雷.md",
+     "p": "狄利克雷.md",
      "s": 0.705,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/狄利克雷.md",
+     "p": "狄利克雷.md",
      "s": 0.69,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/狄利克雷.md",
+     "p": "狄利克雷.md",
      "s": 0.669,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/狄利克雷.md",
+     "p": "狄利克雷.md",
      "s": 0.662,
      "l": "vec"
     }
@@ -203,27 +203,27 @@
    "ms": 35,
    "hits": [
     {
-     "p": "corpus/wikizh/柳生宗章.md",
+     "p": "柳生宗章.md",
      "s": 0.795,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/柳生宗章.md",
+     "p": "柳生宗章.md",
      "s": 0.725,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/张济 (司空).md",
+     "p": "张济 (司空).md",
      "s": 0.489,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/张济 (司空).md",
+     "p": "张济 (司空).md",
      "s": 0.459,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/柳生宗章.md",
+     "p": "柳生宗章.md",
      "s": 0.455,
      "l": "vec"
     }
@@ -235,27 +235,27 @@
    "ms": 42,
    "hits": [
     {
-     "p": "corpus/wikizh/荷式鬆餅.md",
+     "p": "荷式鬆餅.md",
      "s": 0.774,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/荷式鬆餅.md",
+     "p": "荷式鬆餅.md",
      "s": 0.74,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/荷式鬆餅.md",
+     "p": "荷式鬆餅.md",
      "s": 0.731,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/荷式鬆餅.md",
+     "p": "荷式鬆餅.md",
      "s": 0.702,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/荷式鬆餅.md",
+     "p": "荷式鬆餅.md",
      "s": 0.683,
      "l": "vec"
     }
@@ -267,27 +267,27 @@
    "ms": 37,
    "hits": [
     {
-     "p": "corpus/wikizh/查拉湖.md",
+     "p": "查拉湖.md",
      "s": 0.826,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/查拉湖.md",
+     "p": "查拉湖.md",
      "s": 0.726,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/查拉湖.md",
+     "p": "查拉湖.md",
      "s": 0.708,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/查拉湖.md",
+     "p": "查拉湖.md",
      "s": 0.65,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/拉沙河.md",
+     "p": "拉沙河.md",
      "s": 0.529,
      "l": "vec"
     }
@@ -299,27 +299,27 @@
    "ms": 58,
    "hits": [
     {
-     "p": "corpus/wikizh/2010南京化工厂爆炸事件.md",
+     "p": "2010南京化工厂爆炸事件.md",
      "s": 0.723,
      "l": "vec,fts"
     },
     {
-     "p": "corpus/wikizh/2010南京化工厂爆炸事件.md",
+     "p": "2010南京化工厂爆炸事件.md",
      "s": 0.642,
      "l": "vec,fts"
     },
     {
-     "p": "corpus/wikizh/2010南京化工厂爆炸事件.md",
+     "p": "2010南京化工厂爆炸事件.md",
      "s": 0.731,
      "l": "vec,fts"
     },
     {
-     "p": "corpus/wikizh/2010南京化工厂爆炸事件.md",
+     "p": "2010南京化工厂爆炸事件.md",
      "s": 0.642,
      "l": "vec,fts"
     },
     {
-     "p": "corpus/wikizh/2010南京化工厂爆炸事件.md",
+     "p": "2010南京化工厂爆炸事件.md",
      "s": 0.623,
      "l": "vec,fts"
     }
@@ -331,27 +331,27 @@
    "ms": 62,
    "hits": [
     {
-     "p": "corpus/wikizh/荷式鬆餅.md",
+     "p": "荷式鬆餅.md",
      "s": 0.702,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/荷式鬆餅.md",
+     "p": "荷式鬆餅.md",
      "s": 0.678,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/荷式鬆餅.md",
+     "p": "荷式鬆餅.md",
      "s": 0.583,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/荷式鬆餅.md",
+     "p": "荷式鬆餅.md",
      "s": 0.577,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/荷式鬆餅.md",
+     "p": "荷式鬆餅.md",
      "s": 0.555,
      "l": "vec"
     }
@@ -363,27 +363,27 @@
    "ms": 63,
    "hits": [
     {
-     "p": "corpus/wikizh/柳生宗章.md",
+     "p": "柳生宗章.md",
      "s": 0.557,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/柳生宗章.md",
+     "p": "柳生宗章.md",
      "s": 0.541,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/大蔵政務次官.md",
+     "p": "大蔵政務次官.md",
      "s": 0.48,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/柳生宗章.md",
+     "p": "柳生宗章.md",
      "s": 0.473,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/埃及省 (奧斯曼帝國).md",
+     "p": "埃及省 (奧斯曼帝國).md",
      "s": 0.455,
      "l": "vec"
     }
@@ -395,27 +395,27 @@
    "ms": 38,
    "hits": [
     {
-     "p": "corpus/wikizh/查拉湖.md",
+     "p": "查拉湖.md",
      "s": 0.713,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/查拉湖.md",
+     "p": "查拉湖.md",
      "s": 0.634,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/查拉湖.md",
+     "p": "查拉湖.md",
      "s": 0.628,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/查拉湖.md",
+     "p": "查拉湖.md",
      "s": 0.602,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/埃及省 (奧斯曼帝國).md",
+     "p": "埃及省 (奧斯曼帝國).md",
      "s": 0.584,
      "l": "vec"
     }
@@ -427,27 +427,27 @@
    "ms": 42,
    "hits": [
     {
-     "p": "corpus/wikizh/荷式鬆餅.md",
+     "p": "荷式鬆餅.md",
      "s": 0.528,
      "l": "vec"
     },
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/Instant Pot 爌肉.md",
+     "p": "Instant Pot 爌肉.md",
      "s": 0.476,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/荷式鬆餅.md",
+     "p": "荷式鬆餅.md",
      "s": 0.468,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/荷式鬆餅.md",
+     "p": "荷式鬆餅.md",
      "s": 0.464,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/荷式鬆餅.md",
+     "p": "荷式鬆餅.md",
      "s": 0.458,
      "l": "vec"
     }
@@ -459,27 +459,27 @@
    "ms": 44,
    "hits": [
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/orange-chicken.md",
+     "p": "orange-chicken.md",
      "s": 0.621,
      "l": "vec"
     },
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/鹹酥雞.md",
+     "p": "鹹酥雞.md",
      "s": 0.6,
      "l": "vec"
     },
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/orange-chicken.md",
+     "p": "orange-chicken.md",
      "s": 0.543,
      "l": "vec"
     },
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/高壓鍋燉牛肉.md",
+     "p": "高壓鍋燉牛肉.md",
      "s": 0.532,
      "l": "vec"
     },
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/orange-chicken.md",
+     "p": "orange-chicken.md",
      "s": 0.515,
      "l": "vec"
     }
@@ -491,27 +491,27 @@
    "ms": 31,
    "hits": [
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/高壓鍋燉牛肉.md",
+     "p": "高壓鍋燉牛肉.md",
      "s": 0.725,
      "l": "vec"
     },
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/高壓鍋燉牛肉.md",
+     "p": "高壓鍋燉牛肉.md",
      "s": 0.674,
      "l": "vec"
     },
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/高壓鍋燉牛肉.md",
+     "p": "高壓鍋燉牛肉.md",
      "s": 0.663,
      "l": "vec"
     },
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/高壓鍋燉牛肉.md",
+     "p": "高壓鍋燉牛肉.md",
      "s": 0.642,
      "l": "vec"
     },
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/Instant Pot 滷腿庫.md",
+     "p": "Instant Pot 滷腿庫.md",
      "s": 0.583,
      "l": "vec"
     }
@@ -523,27 +523,27 @@
    "ms": 46,
    "hits": [
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/orange-chicken.md",
+     "p": "orange-chicken.md",
      "s": 0.539,
      "l": "vec"
     },
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/orange-chicken.md",
+     "p": "orange-chicken.md",
      "s": 0.503,
      "l": "vec"
     },
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/Instant Pot 滷腿庫.md",
+     "p": "Instant Pot 滷腿庫.md",
      "s": 0.453,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/荷式鬆餅.md",
+     "p": "荷式鬆餅.md",
      "s": 0.441,
      "l": "vec"
     },
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/orange-chicken.md",
+     "p": "orange-chicken.md",
      "s": 0.42,
      "l": "vec"
     }
@@ -555,27 +555,27 @@
    "ms": 31,
    "hits": [
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/高壓鍋燉牛肉.md",
+     "p": "高壓鍋燉牛肉.md",
      "s": 0.683,
      "l": "vec"
     },
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/高壓鍋燉牛肉.md",
+     "p": "高壓鍋燉牛肉.md",
      "s": 0.58,
      "l": "vec"
     },
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/高壓鍋燉牛肉.md",
+     "p": "高壓鍋燉牛肉.md",
      "s": 0.579,
      "l": "vec"
     },
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/高壓鍋燉牛肉.md",
+     "p": "高壓鍋燉牛肉.md",
      "s": 0.57,
      "l": "vec"
     },
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/高壓鍋燉牛肉.md",
+     "p": "高壓鍋燉牛肉.md",
      "s": 0.547,
      "l": "vec"
     }
@@ -587,27 +587,27 @@
    "ms": 32,
    "hits": [
     {
-     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "p": "2026-08-29.md",
      "s": 9.68,
      "l": "fts"
     },
     {
-     "p": "corpus/wikizh/Chenières.md",
+     "p": "Chenières.md",
      "s": 0.552,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/Charnizay.md",
+     "p": "Charnizay.md",
      "s": 0.538,
      "l": "vec"
     },
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/Instant Pot 爌肉.md",
+     "p": "Instant Pot 爌肉.md",
      "s": 0.504,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/乾陀啰树香.md",
+     "p": "乾陀啰树香.md",
      "s": 0.503,
      "l": "vec"
     }
@@ -619,27 +619,27 @@
    "ms": 28,
    "hits": [
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/orange-chicken.md",
+     "p": "orange-chicken.md",
      "s": 0.584,
      "l": "vec"
     },
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/orange-chicken.md",
+     "p": "orange-chicken.md",
      "s": 0.573,
      "l": "vec"
     },
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/orange-chicken.md",
+     "p": "orange-chicken.md",
      "s": 0.547,
      "l": "vec"
     },
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/高壓鍋燉牛肉.md",
+     "p": "高壓鍋燉牛肉.md",
      "s": 0.537,
      "l": "vec"
     },
     {
-     "p": "corpus/vault/20_Knowledge/Food Recipe/orange-chicken.md",
+     "p": "orange-chicken.md",
      "s": 0.527,
      "l": "vec"
     }
@@ -651,27 +651,27 @@
    "ms": 46,
    "hits": [
     {
-     "p": "corpus/wikizh/柳生宗章.md",
+     "p": "柳生宗章.md",
      "s": 0.744,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/狄利克雷.md",
+     "p": "狄利克雷.md",
      "s": 0.694,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/狄利克雷.md",
+     "p": "狄利克雷.md",
      "s": 0.642,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/狄利克雷.md",
+     "p": "狄利克雷.md",
      "s": 0.639,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/狄利克雷.md",
+     "p": "狄利克雷.md",
      "s": 0.636,
      "l": "vec"
     }
@@ -683,27 +683,27 @@
    "ms": 39,
    "hits": [
     {
-     "p": "corpus/wikizh/文化中心站 (高雄市).md",
+     "p": "文化中心站 (高雄市).md",
      "s": 0.525,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/文化中心站 (高雄市).md",
+     "p": "文化中心站 (高雄市).md",
      "s": 0.469,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/文化中心站 (高雄市).md",
+     "p": "文化中心站 (高雄市).md",
      "s": 0.448,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/路環市政街市.md",
+     "p": "路環市政街市.md",
      "s": 0.417,
      "l": "vec"
     },
     {
-     "p": "corpus/wikizh/文化中心站 (高雄市).md",
+     "p": "文化中心站 (高雄市).md",
      "s": 0.411,
      "l": "vec"
     }
