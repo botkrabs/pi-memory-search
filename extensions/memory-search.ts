@@ -40,13 +40,16 @@ export default function (pi: ExtensionAPI) {
     parameters: Type.Object({
       query: Type.String({ description: "Natural-language query" }),
       k: Type.Optional(Type.Number({ description: "Max results (default 8)" })),
+      sources: Type.Optional(Type.Array(Type.String(), {
+        description: "Restrict to source labels (e.g. 'my_second_brain', 'llm-wiki', 'memory'). Omit for all. Use when the question targets one tier: personal facts → my_second_brain; what the agent noted → memory; co-owned research → llm-wiki.",
+      })),
     }),
     async execute(_id, params) {
       const k = Math.min(Math.max(1, Math.round(params.k ?? 8)), 25);
       try {
         if (pendingIndex) { await pendingIndex; pendingIndex = null; }
         const t0 = Date.now();
-        const { hits, coverage } = await searchDetailed(params.query, k, loadConfig());
+        const { hits, coverage } = await searchDetailed(params.query, k, loadConfig(), Array.isArray(params.sources) ? params.sources : undefined);
         if (!hits.length) return { content: [{ type: "text", text: "no results" }], details: {} };
         const out = hits
           .map((h, i) => `${i + 1}. ${h.path}:${h.line} [${h.source}] (${h.lanes}, s=${h.score.toFixed(3)})\n   ${String(h.snippet).replace(/\n/g, " | ").trim()}`)

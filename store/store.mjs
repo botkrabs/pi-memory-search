@@ -325,7 +325,7 @@ async function getEmbedFn(modelPath) {
 }
 
 // ---------- hybrid query (same engine as before, pi's store) ----------
-export async function search(query, k = 8, cfg) {
+export async function search(query, k = 8, cfg, sources) {
   const d = getDb();
   const embed = await getEmbedFn(modelPathFor(cfg));
   const qv = await embed(query);
@@ -376,6 +376,16 @@ export async function search(query, k = 8, cfg) {
         .map((r) => ({ id: r.id, meta: { ...r, score: runs.length } }));
     } catch { /* schema mismatch etc — lanes 0/1 still answer */ }
   }
+  // Per-query source filter (ownership routing, 2026-08-29): the agent picks
+  // a tier ("my_second_brain" for personal, "memory" for its own lanes,
+  // "llm-wiki" for co-owned research) instead of hoping the tier survives the
+  // merge against 15k deep-corpus chunks. Applied per-lane pre-merge.
+  if (Array.isArray(sources) && sources.length) {
+    const sset = new Set(sources);
+    laneA = laneA.filter((x) => sset.has(x.meta.source));
+    laneB = laneB.filter((x) => sset.has(x.meta.source));
+    laneC = laneC.filter((x) => sset.has(x.meta.source));
+  }
   if (!laneA.length && !laneB.length && !laneC.length) return [];
 
   const excludes = (cfg?.excludePaths ?? []);
@@ -419,8 +429,8 @@ export async function search(query, k = 8, cfg) {
 // article at high confidence (0.69-0.86), so the only separable absent-topic
 // signal is term presence in the hits. The agent decides abstention; this
 // surfaces the evidence.
-export async function searchDetailed(query, k = 8, cfg) {
-  const hits = await search(query, k, cfg);
+export async function searchDetailed(query, k = 8, cfg, sources) {
+  const hits = await search(query, k, cfg, sources);
   let coverage = { found: [], missing: [] };
   if (hits.length) {
     const d = getDb();
