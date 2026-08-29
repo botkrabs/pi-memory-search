@@ -104,7 +104,8 @@ export function coverageOf(query, texts) {
   // CJK runs — the interrogative strip must INSERT a separator, not delete:
   // deleting fuses entity+question into one run (小早川秀秋+血型), and the
   // entity's 2-char slices then satisfy the whole run, killing the signal.
-  for (const raw of hasCJK ? cjkRuns(query.replace(CJK_STRIP, "◇")) : []) {
+  const segRuns = cjkRuns(query.replace(CJK_STRIP, "◇"));
+  for (const raw of hasCJK ? segRuns : []) {
     const run = raw.replace(/◇/g, "");
     if (run.length < 2 || seen.has(run)) continue;
     seen.add(run);
@@ -116,5 +117,12 @@ export function coverageOf(query, texts) {
     seen.add(tok);
     (hay.includes(tok) || hay.includes(tok.replace(/s$/, "")) ? found : missing).push(tok);
   }
+  // Entity-level cue (bypasses the same-script guard): the longest segmented
+  // run is the presumed entity. If it is absent from every hit, the hits are
+  // probably not even about the entity — the strongest absent signal. The
+  // >=3 length guard skips verb fragments left after stripping (启动).
+  const entity = [...segRuns].sort((a, b) => b.length - a.length)[0];
+  if (entity && entity.length >= 3 && !seen.has(entity)
+      && !cjkSlices(entity).some((s) => hay.includes(s))) missing.push(entity);
   return { found, missing };
 }
