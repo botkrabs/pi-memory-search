@@ -57,10 +57,11 @@ Cold full-index speed is the one thing the CPU path can't scale — a 10k-chunk 
 
 ```bash
 cd <package dir>/node_modules/node-llama-cpp   # where pi installed the deps
-npm run build                                  # one-time, few minutes, cached in llama/localBuilds
+node dist/cli/cli.js source download           # fetches the llama.cpp source bundle
+node dist/cli/cli.js source build --gpu auto --noUsageExample   # ~10 min on a 4090, one-time
 ```
 
-Prereqs: `g++`/`make`, `cmake`, and the NVIDIA CUDA toolkit (the build script auto-detects `nvcc`); the GPU driver at runtime. Then set `"gpu": -1` in `memory-search.json`. VRAM is flat (~1 GB for the 0.6B model + 4096 ctx) regardless of corpus size — chunks are embedded one at a time. Skip it entirely and the CPU prebuilt stays the zero-effort path.
+(`npm run build` does NOT work here — that's node-llama-cpp's own TypeScript build and needs devDependencies that aren't installed in a consumer `node_modules`.) The CUDA compile is the long part: `ggml-cuda` builds one kernel template instance per quantization type, each slow under nvcc. Output lands in `llama/localBuilds/` (gitignored — it survives `pi update`, which resets the clone but leaves ignored files). Prereqs: `g++`/`make`, `cmake`, and the NVIDIA CUDA toolkit (`--gpu auto` detects `nvcc`); the GPU driver at runtime. Then set `"gpu": -1` in `memory-search.json`. VRAM is flat (~1 GB for the 0.6B model + 4096 ctx) regardless of corpus size — chunks are embedded one at a time. Skip it entirely and the CPU prebuilt stays the zero-effort path.
 
 ### Choosing the embedding model
 
