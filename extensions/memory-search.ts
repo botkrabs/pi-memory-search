@@ -13,7 +13,7 @@
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 import { Type } from "typebox";
 // @ts-ignore
-import { indexNow, search, loadConfig } from "../store/store.mjs";
+import { indexNow, searchDetailed, loadConfig } from "../store/store.mjs";
 
 let pendingIndex: Promise<unknown> | null = null;
 
@@ -34,7 +34,9 @@ export default function (pi: ExtensionAPI) {
       "(memory.md, memory-wiki/, memory-daily/) plus any extraPaths in " +
       "~/.pi/agent/memory-search.json. Use for personal facts, past decisions, project " +
       "notes, 'what did we do/decide about X'. Returns ranked hits as path:line with " +
-      "snippet and lane tags (vec/fts). For exact identifiers or code, grep may be faster.",
+      "snippet and lane tags (vec/fts), plus a coverage note listing query terms absent from the " +
+      "top hits — if the query's key terms are missing, the topic may not be covered: say so " +
+      "instead of answering from the hit alone. For exact identifiers or code, grep may be faster.",
     parameters: Type.Object({
       query: Type.String({ description: "Natural-language query" }),
       k: Type.Optional(Type.Number({ description: "Max results (default 8)" })),
@@ -44,14 +46,17 @@ export default function (pi: ExtensionAPI) {
       try {
         if (pendingIndex) { await pendingIndex; pendingIndex = null; }
         const t0 = Date.now();
-        const hits = await search(params.query, k, loadConfig());
+        const { hits, coverage } = await searchDetailed(params.query, k, loadConfig());
         if (!hits.length) return { content: [{ type: "text", text: "no results" }], details: {} };
         const out = hits
           .map((h, i) => `${i + 1}. ${h.path}:${h.line} [${h.source}] (${h.lanes}, s=${h.score.toFixed(3)})\n   ${String(h.snippet).replace(/\n/g, " | ").trim()}`)
           .join("\n");
+        const cov = coverage.missing.length
+          ? `\ncoverage: NOT in top hits: ${coverage.missing.join(", ")} — topic may not be covered; verify before asserting`
+          : "";
         return {
-          content: [{ type: "text", text: `memory_search: ${params.query}\n${out}\n(${Date.now() - t0}ms, k=${k})` }],
-          details: { hits: hits.length },
+          content: [{ type: "text", text: `memory_search: ${params.query}\n${out}${cov}\n(${Date.now() - t0}ms, k=${k})` }],
+          details: { hits: hits.length, missing: coverage.missing },
         };
       } catch (e) {
         const m = String(e?.message ?? e);

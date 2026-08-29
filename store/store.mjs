@@ -19,7 +19,7 @@ import { createHash } from "node:crypto";
 import { DatabaseSync } from "node:sqlite";
 import { getLoadablePath as vecLoadablePath } from "sqlite-vec";
 import os from "node:os";
-import { ftsQueryFromText, cjkRuns, cosine, rrfMerge, isExcluded } from "./memory-search-query.mjs";
+import { ftsQueryFromText, cjkRuns, cosine, rrfMerge, isExcluded, coverageOf } from "./memory-search-query.mjs";
 
 const HOME = os.homedir();
 export const STORE_DIR = join(HOME, ".pi", "agent", "memory-store");
@@ -411,4 +411,26 @@ export async function search(query, k = 8, cfg) {
     out.push({ path: m.meta.path, line: m.meta.start_line, source: m.meta.source, snippet: m.meta.snippet, lanes, score: s });
   }
   return out;
+}
+
+// search + a coverage field: which of the query's terms (beyond the entity)
+// actually appear in the top hits. Informational only — ranking is identical
+// to search(). Motivated by bench v2: unanswerable queries return the entity's
+// article at high confidence (0.69-0.86), so the only separable absent-topic
+// signal is term presence in the hits. The agent decides abstention; this
+// surfaces the evidence.
+export async function searchDetailed(query, k = 8, cfg) {
+  const hits = await search(query, k, cfg);
+  let coverage = { found: [], missing: [] };
+  if (hits.length) {
+    const d = getDb();
+    const texts = hits.map((h) =>
+      d.prepare("SELECT text FROM chunks WHERE path = ? AND start_line = ?").get(h.path, h.line)?.text ?? ""
+    );
+    // + every chunk of the top hit's FILE: a value can sit in a sibling chunk
+    // beyond top-k (the chunk-miss pattern from bench v2).
+    const sameFile = d.prepare("SELECT text FROM chunks WHERE path = ?").all(hits[0].path).map((r) => r.text);
+    coverage = coverageOf(query, [...texts, ...sameFile]);
+  }
+  return { hits, coverage };
 }
