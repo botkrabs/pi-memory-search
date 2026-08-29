@@ -1,0 +1,1257 @@
+{
+ "indexMs": 40889,
+ "indexed": {
+  "indexed": 1468,
+  "files": 10
+ },
+ "queries": [
+  {
+   "set": "A exact identifiers",
+   "q": "hv_utils",
+   "ms": 5,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory.md",
+     "s": 0.642,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.619,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 4.542,
+     "l": "fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/WSL2/yazi-summary.md",
+     "s": 0.658,
+     "l": "vec"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/Openclaw/lossless-claw plugin.md",
+     "s": 0.658,
+     "l": "vec"
+    }
+   ]
+  },
+  {
+   "set": "A exact identifiers",
+   "q": "memory_embedding_cache",
+   "ms": 4,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "s": 0.661,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/Openclaw/openclaw-memory-management.md",
+     "s": 0.762,
+     "l": "vec"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.75,
+     "l": "vec"
+    },
+    {
+     "p": "~/pi-learning/memory-wiki/box.md",
+     "s": 0.731,
+     "l": "vec"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.726,
+     "l": "vec"
+    }
+   ]
+  },
+  {
+   "set": "A exact identifiers",
+   "q": "a Windows firewall rule name",
+   "ms": 4,
+   "hits": [
+    {
+     "p": "vault/20_Knowledge/Programming/WSL2/ssh-wsl2-pi-box.md",
+     "s": 0.844,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/WSL2/ssh-wsl2-pi-box.md",
+     "s": 0.826,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/Daily/2026-08-24.md",
+     "s": 0.772,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-wiki/ssh.md",
+     "s": 0.796,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-wiki/ssh.md",
+     "s": 0.689,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "B semantic paraphrase",
+   "q": "how do I get onto this machine from my Mac",
+   "ms": 8,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory-wiki/ssh.md",
+     "s": 0.709,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/WSL2/ssh-wsl2-pi-box.md",
+     "s": 0.694,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-wiki/ssh.md",
+     "s": 0.641,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-wiki/ssh.md",
+     "s": 0.645,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/WSL2/ssh-wsl2-pi-box.md",
+     "s": 0.636,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "B semantic paraphrase",
+   "q": "why was github.com unreachable for a day",
+   "ms": 6,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.735,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory.md",
+     "s": 0.69,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-wiki/box.md",
+     "s": 0.651,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.678,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/ai_write/memory-daily/2026-08-28.md",
+     "s": 0.666,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "B semantic paraphrase",
+   "q": "why do time deltas in logs right after waking the box not make sense",
+   "ms": 7,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.75,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/Openclaw/openclaw-memory-management.md",
+     "s": 0.706,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory.md",
+     "s": 0.753,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/Openclaw/openclaw-memory-management.md",
+     "s": 0.702,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/Openclaw/openclaw-memory-management.md",
+     "s": 0.694,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "C cross-project / CJK",
+   "q": "椒麻雞 recipe",
+   "ms": 4,
+   "hits": [
+    {
+     "p": "vault/20_Knowledge/Food Recipe/照燒雞 Teriyaki Chicken.md",
+     "s": 0.839,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Food Recipe/椒麻雞 Sichuan Style Chicken and spicy sweet and sour sauce.md",
+     "s": 0.816,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Food Recipe/椒麻雞 Sichuan Style Chicken and spicy sweet and sour sauce.md",
+     "s": 0.81,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Food Recipe/高壓鍋燉牛肉.md",
+     "s": 0.807,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Food Recipe/高壓鍋燉牛肉.md",
+     "s": 0.799,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "C cross-project / CJK",
+   "q": "catan strategy",
+   "ms": 4,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.706,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.617,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 7.435,
+     "l": "fts"
+    },
+    {
+     "p": "vault/Clippings/Agent Ops 反直覺發現：Agentic System 裡最貴的模型，放錯位置反而拖垮整條管線.md",
+     "s": 0.629,
+     "l": "vec"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "s": 6.327,
+     "l": "fts"
+    }
+   ]
+  },
+  {
+   "set": "C cross-project / CJK",
+   "q": "epub spine idref",
+   "ms": 4,
+   "hits": [
+    {
+     "p": "~/book-editing/memory-wiki/epub.md",
+     "s": 0.759,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/book-editing/memory-wiki/epub.md",
+     "s": 0.782,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/book-editing/memory-daily/2026-08-28.md",
+     "s": 0.682,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/book-editing/memory-wiki/llms.md",
+     "s": 0.713,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/book-editing/memory-wiki/epub.md",
+     "s": 0.663,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "D fact extraction",
+   "q": "what port does the wikipedia MCP run on",
+   "ms": 6,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory-wiki/box.md",
+     "s": 0.731,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.699,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/ai_write/memory-wiki/mcp.md",
+     "s": 0.709,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/ai_write/memory-wiki/mcp.md",
+     "s": 0.662,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/ai_write/memory-wiki/llms.md",
+     "s": 0.689,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "D fact extraction",
+   "q": "how many chunks are in the memory index",
+   "ms": 6,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.744,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-wiki/box.md",
+     "s": 0.777,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/Openclaw/openclaw-memory-management.md",
+     "s": 0.714,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.709,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "s": 0.781,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "D fact extraction",
+   "q": "how fast does pi embed chunks per minute",
+   "ms": 5,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "s": 0.799,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-wiki/box.md",
+     "s": 0.776,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.724,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-wiki/box.md",
+     "s": 0.705,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "s": 0.679,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "E pitfall / must-not-do",
+   "q": "what process must never be killed",
+   "ms": 5,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory.md",
+     "s": 0.688,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/archive/2026-08-28.md",
+     "s": 0.638,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/Openclaw/lossless-claw plugin.md",
+     "s": 0.641,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "s": 0.597,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/Openclaw/openclaw-browser-fix.md",
+     "s": 0.601,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "E pitfall / must-not-do",
+   "q": "why does Query with a text argument silently fail",
+   "ms": 5,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory-daily/archive/2026-08-28.md",
+     "s": 0.671,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory.md",
+     "s": 0.658,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/Openclaw/llama.cpp Grammar Fix.md",
+     "s": 0.641,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/Openclaw/llama.cpp Grammar Fix.md",
+     "s": 0.638,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/Openclaw/llama.cpp Grammar Fix.md",
+     "s": 0.638,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "E pitfall / must-not-do",
+   "q": "why must the wiki server not use bare python3",
+   "ms": 6,
+   "hits": [
+    {
+     "p": "vault/Clippings/llm-wiki.md",
+     "s": 0.679,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.759,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/Clippings/Thread by @karpathy.md",
+     "s": 0.685,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/Daily/2026-08-21.md",
+     "s": 0.665,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/Clippings/Thread by @karpathy.md",
+     "s": 0.685,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "F negative control (absent)",
+   "q": "what is my favorite coffee drink",
+   "ms": 5,
+   "hits": [
+    {
+     "p": "vault/10_Projects/Blue Mountain.md",
+     "s": 0.568,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/10_Projects/Blue Mountain.md",
+     "s": 0.584,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/10_Projects/Blue Mountain.md",
+     "s": 0.577,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/10_Projects/Blue Mountain.md",
+     "s": 0.631,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/10_Projects/Blue Mountain.md",
+     "s": 0.576,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "F negative control (absent)",
+   "q": "how do I change a flat bike tire",
+   "ms": 5,
+   "hits": [
+    {
+     "p": "vault/Clippings/Thread by @karpathy.md",
+     "s": 0.54,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/Clippings/Thread by @karpathy.md",
+     "s": 0.54,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/Clippings/Thread by @karpathy.md",
+     "s": 0.54,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/Clippings/Thread by @karpathy.md",
+     "s": 0.54,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/WSL2/ssh-wsl2-pi-box.md",
+     "s": 0.557,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "F negative control (absent)",
+   "q": "what is the password for the office printer",
+   "ms": 6,
+   "hits": [
+    {
+     "p": "vault/Clippings/llm-wiki.md",
+     "s": 8.569,
+     "l": "fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/WSL2/ssh-wsl2-pi-box.md",
+     "s": 0.668,
+     "l": "vec"
+    },
+    {
+     "p": "vault/Clippings/llm-wiki.md",
+     "s": 8.516,
+     "l": "fts"
+    },
+    {
+     "p": "~/pi-learning/memory-wiki/ssh.md",
+     "s": 0.66,
+     "l": "vec"
+    },
+    {
+     "p": "vault/10_Projects/Openclaw/openclaw session timeline.md",
+     "s": 8.119,
+     "l": "fts"
+    }
+   ]
+  },
+  {
+   "set": "G short ambiguous",
+   "q": "kill",
+   "ms": 4,
+   "hits": [
+    {
+     "p": "vault/20_Knowledge/Programming/WSL2/tmux-split-screen.md",
+     "s": 0.701,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/WSL2/tmux-split-screen.md",
+     "s": 0.685,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory.md",
+     "s": 0.653,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/WSL2/tmux-split-screen.md",
+     "s": 0.642,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/archive/2026-08-28.md",
+     "s": 0.648,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "G short ambiguous",
+   "q": "port",
+   "ms": 4,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory-wiki/box.md",
+     "s": 0.672,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/Clippings/Mastering llama.cpp A Comprehensive Guide to Local LLM Integration.md",
+     "s": 0.627,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/Clippings/Mastering llama.cpp A Comprehensive Guide to Local LLM Integration.md",
+     "s": 0.618,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/archive/2026-08-28.md",
+     "s": 6.36,
+     "l": "fts"
+    },
+    {
+     "p": "~/pi-learning/memory.md",
+     "s": 5.823,
+     "l": "fts"
+    }
+   ]
+  },
+  {
+   "set": "G short ambiguous",
+   "q": "dns",
+   "ms": 4,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.703,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.662,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.647,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.639,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.632,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "H reverse lookup (value→fact)",
+   "q": "the chat router port",
+   "ms": 4,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 6.778,
+     "l": "fts"
+    },
+    {
+     "p": "~/pi-learning/memory.md",
+     "s": 6.285,
+     "l": "fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 5.326,
+     "l": "fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/archive/2026-08-28.md",
+     "s": 5.21,
+     "l": "fts"
+    },
+    {
+     "p": "~/ai_write/memory-wiki/thinking-mode.md",
+     "s": 4.914,
+     "l": "fts"
+    }
+   ]
+  },
+  {
+   "set": "H reverse lookup (value→fact)",
+   "q": "100.x.y.z (a Tailscale IP)",
+   "ms": 6,
+   "hits": [
+    {
+     "p": "vault/20_Knowledge/Programming/WSL2/ssh-wsl2-pi-box.md",
+     "s": 17.458,
+     "l": "fts"
+    },
+    {
+     "p": "~/pi-learning/memory-wiki/ssh.md",
+     "s": 16.946,
+     "l": "fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/WSL2/ssh-wsl2-pi-box.md",
+     "s": 16.659,
+     "l": "fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/WSL2/ssh-wsl2-pi-box.md",
+     "s": 15.149,
+     "l": "fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/WSL2/ssh-wsl2-pi-box.md",
+     "s": 14.427,
+     "l": "fts"
+    }
+   ]
+  },
+  {
+   "set": "H reverse lookup (value→fact)",
+   "q": "the chunk count from the logs",
+   "ms": 4,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "s": 10.91,
+     "l": "fts"
+    },
+    {
+     "p": "~/pi-learning/memory-wiki/box.md",
+     "s": 7.467,
+     "l": "fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "s": 5.623,
+     "l": "fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Food Recipe/Instant Pot 滷腿庫.md",
+     "s": 0.634,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/Openclaw/openclaw-memory-management.md",
+     "s": 0.677,
+     "l": "vec"
+    }
+   ]
+  },
+  {
+   "set": "I typo / misspelling",
+   "q": "how do I acces the pi box from the mac",
+   "ms": 7,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory-wiki/ssh.md",
+     "s": 0.717,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-wiki/ssh.md",
+     "s": 0.731,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/WSL2/ssh-wsl2-pi-box.md",
+     "s": 0.707,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/Daily/2026-08-24.md",
+     "s": 0.684,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/WSL2/ssh-wsl2-pi-box.md",
+     "s": 0.699,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "I typo / misspelling",
+   "q": "whats the port for the wikpedia mcp",
+   "ms": 6,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory-wiki/box.md",
+     "s": 0.742,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/ai_write/memory-wiki/llms.md",
+     "s": 0.708,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/ai_write/memory-wiki/mcp.md",
+     "s": 0.712,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/ai_write/memory.md",
+     "s": 0.712,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/ai_write/memory-wiki/mcp.md",
+     "s": 0.698,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "I typo / misspelling",
+   "q": "Qwen3-Embeddng",
+   "ms": 5,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.808,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/LLM/llama-cpp - LLM models configurations.md",
+     "s": 0.681,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/LLM/llama-cpp - LLM models configurations.md",
+     "s": 0.688,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/Openclaw/llama.cpp Grammar Fix.md",
+     "s": 0.676,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/LLM/llama-cpp - LLM models configurations.md",
+     "s": 0.69,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "J multi-hop / compositional",
+   "q": "what was the sinkhole IP that poisoned the github DNS",
+   "ms": 7,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.786,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.761,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.704,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory.md",
+     "s": 0.732,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "s": 0.691,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "J multi-hop / compositional",
+   "q": "how long did the cold OpenClaw index take",
+   "ms": 6,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "s": 0.809,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-wiki/box.md",
+     "s": 0.691,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/10_Projects/Openclaw/openclaw journey.md",
+     "s": 0.723,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-wiki/box.md",
+     "s": 0.659,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/10_Projects/Openclaw/openclaw journey.md",
+     "s": 0.649,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "J multi-hop / compositional",
+   "q": "which model quant does the local chat router run",
+   "ms": 6,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.763,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/LLM/llama.cpp Model Management.md",
+     "s": 0.732,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/Daily/2026-08-21.md",
+     "s": 0.705,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/10_Projects/Openclaw/Qwen3.8-27B Thinking Control.md",
+     "s": 0.77,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/Daily/2026-08-21.md",
+     "s": 0.717,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "K long multi-intent prose",
+   "q": "im on the mac and github push hangs — remind me what broke DNS and how i log in anyway",
+   "ms": 8,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory-wiki/box.md",
+     "s": 0.721,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/Github/GitHub + Obsidian in WSL2 — Step-by-Step Guide.md",
+     "s": 0.664,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/Github/GitHub + Obsidian in WSL2 — Step-by-Step Guide.md",
+     "s": 0.665,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/Github/Github Quick Tips.md",
+     "s": 0.686,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.775,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "K long multi-intent prose",
+   "q": "the wiki mcp port is taken again — what do i check before killing anything",
+   "ms": 9,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory-wiki/box.md",
+     "s": 0.765,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.746,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-daily/archive/2026-08-28.md",
+     "s": 0.722,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/ai_write/memory-wiki/mcp.md",
+     "s": 0.719,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory.md",
+     "s": 0.692,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "K long multi-intent prose",
+   "q": "reindex is slow, was it fast before and why",
+   "ms": 5,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-29.md",
+     "s": 0.736,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory.md",
+     "s": 0.636,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/WSL2/yazi-summary.md",
+     "s": 16.69,
+     "l": "fts"
+    },
+    {
+     "p": "vault/50_Templates/Areas.md",
+     "s": 14.017,
+     "l": "fts"
+    },
+    {
+     "p": "~/pi-learning/memory-wiki/box.md",
+     "s": 0.684,
+     "l": "vec"
+    }
+   ]
+  },
+  {
+   "set": "L substring / token fragment",
+   "q": "Q4_K_M",
+   "ms": 5,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory.md",
+     "s": 0.725,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/Daily/2026-08-21.md",
+     "s": 0.703,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/Clippings/Mastering llama.cpp A Comprehensive Guide to Local LLM Integration.md",
+     "s": 0.7,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/book-editing/memory-wiki/pi-ops.md",
+     "s": 0.704,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/LLM/llama-cpp - LLM models configurations.md",
+     "s": 5.275,
+     "l": "fts"
+    }
+   ]
+  },
+  {
+   "set": "L substring / token fragment",
+   "q": "100.64.0.0/10",
+   "ms": 5,
+   "hits": [
+    {
+     "p": "vault/20_Knowledge/Programming/WSL2/ssh-wsl2-pi-box.md",
+     "s": 17.357,
+     "l": "fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/WSL2/ssh-wsl2-pi-box.md",
+     "s": 12.005,
+     "l": "fts"
+    },
+    {
+     "p": "~/pi-learning/memory-wiki/box.md",
+     "s": 11.955,
+     "l": "fts"
+    },
+    {
+     "p": "vault/Daily/2026-08-24.md",
+     "s": 11.802,
+     "l": "fts"
+    },
+    {
+     "p": "~/pi-learning/memory-wiki/ssh.md",
+     "s": 10.506,
+     "l": "fts"
+    }
+   ]
+  },
+  {
+   "set": "L substring / token fragment",
+   "q": "椒麻",
+   "ms": 4,
+   "hits": [
+    {
+     "p": "vault/20_Knowledge/Food Recipe/Instant Pot 滷腿庫.md",
+     "s": 0.878,
+     "l": "vec"
+    },
+    {
+     "p": "vault/20_Knowledge/Food Recipe/高壓鍋燉牛肉.md",
+     "s": 0.878,
+     "l": "vec"
+    },
+    {
+     "p": "vault/20_Knowledge/Food Recipe/Instant Pot 爌肉.md",
+     "s": 0.878,
+     "l": "vec"
+    },
+    {
+     "p": "vault/20_Knowledge/Food Recipe/orange-chicken.md",
+     "s": 0.878,
+     "l": "vec"
+    },
+    {
+     "p": "vault/Clippings/Agent Ops 反直覺發現：Agentic System 裡最貴的模型，放錯位置反而拖垮整條管線.md",
+     "s": 0.869,
+     "l": "vec"
+    }
+   ]
+  },
+  {
+   "set": "M question-form entity attr",
+   "q": "which firewall rule name admits tailnet ssh",
+   "ms": 4,
+   "hits": [
+    {
+     "p": "vault/20_Knowledge/Programming/WSL2/ssh-wsl2-pi-box.md",
+     "s": 0.841,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-wiki/llms.md",
+     "s": 0.781,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/WSL2/ssh-wsl2-pi-box.md",
+     "s": 0.754,
+     "l": "vec,fts"
+    },
+    {
+     "p": "~/pi-learning/memory-wiki/ssh.md",
+     "s": 0.721,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/Daily/2026-08-24.md",
+     "s": 0.733,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "M question-form entity attr",
+   "q": "which model quant is the local chat model",
+   "ms": 6,
+   "hits": [
+    {
+     "p": "~/pi-learning/memory-daily/2026-08-28.md",
+     "s": 0.755,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/LLM/llama.cpp Model Management.md",
+     "s": 0.73,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/Clippings/Mastering llama.cpp A Comprehensive Guide to Local LLM Integration.md",
+     "s": 0.749,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/10_Projects/Openclaw/Qwen3.8-27B Thinking Control.md",
+     "s": 0.772,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/Clippings/Mastering llama.cpp A Comprehensive Guide to Local LLM Integration.md",
+     "s": 0.738,
+     "l": "vec,fts"
+    }
+   ]
+  },
+  {
+   "set": "M question-form entity attr",
+   "q": "what is the git email identity",
+   "ms": 5,
+   "hits": [
+    {
+     "p": "vault/20_Knowledge/Programming/Github/GitHub + Obsidian in WSL2 — Step-by-Step Guide.md",
+     "s": 0.73,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/Github/GitHub + Obsidian in WSL2 — Step-by-Step Guide.md",
+     "s": 0.748,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/Github/GitHub + Obsidian in WSL2 — Step-by-Step Guide.md",
+     "s": 0.725,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/Github/GitHub + Obsidian in WSL2 — Step-by-Step Guide.md",
+     "s": 0.727,
+     "l": "vec,fts"
+    },
+    {
+     "p": "vault/20_Knowledge/Programming/Github/GitHub + Obsidian in WSL2 — Step-by-Step Guide.md",
+     "s": 0.704,
+     "l": "vec,fts"
+    }
+   ]
+  }
+ ]
+}

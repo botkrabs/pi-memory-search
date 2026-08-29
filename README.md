@@ -57,6 +57,24 @@ huggingface-cli download ggml-org/bge-small-en-v1.5-Q8_0-GGUF bge-small-en-v1.5-
 
 Caveats: 39 queries / ~900 chunks is a directional gate, not a statistical benchmark; index speeds scale linearly with your corpus size (a 16k-chunk cold index ≈ 90 min on Qwen3, ~25 min on EmbeddingGemma).
 
+### Benchmark results
+
+Per-query top hits (scores + winning lane) for both benches are in [`bench/`](bench/): `results-en-*.json` (39 queries, ~935-chunk agent-memory corpus, three models) and `results-cjk-*.json` (22 queries, two models). Paths and personal values in the data are generalized; the query set includes exact identifiers, value→fact reverse lookups, paraphrase, typos, multi-hop, negative controls (absent topics), and CJK.
+
+**English gate (39 queries):** quality was a near-tie — ~31/34 top-2 for Qwen3 and EmbeddingGemma, ~27/34 for bge-small — because the hybrid FTS lane carries exact/identifier matches regardless of model. The differentiators: CJK (Qwen3-only), one pitfall-note recall (Gemma-only), and index speed (bge 10×).
+
+**Pure-CJK bench (22 grounded queries, 2,147-chunk zh corpus):** this is where the decision closed.
+
+| | Qwen3-0.6B | EmbeddingGemma-300M |
+|---|---|---|
+| Correct rank-1 | **17 / 18** | 12 / 18 |
+| Query latency | 40 ms | 15 ms |
+| CJK index speed | 1.76 s/ch | 0.41 s/ch (4.3× faster) |
+
+Qwen3 wins every *hard* query — fragments with same-language distractors, semantic paraphrase, disambiguation between neighboring same-domain notes (two pressure-cooker recipes), and a dual-entity multi-hop (both correct articles in the top-2, vs category pages for Gemma). The two tie on exact terms and FTS-anchored queries. Gemma's CJK is fine for full terms but its cosine separation between near-same-domain CJK chunks is too low to rank reliably.
+
+One caveat found in the bench: EmbeddingGemma's 2048-token native context overflows long CJK chunks (a 3,200-char CJK chunk crashed it — CJK tokenizes denser than English); the bench applied a 1,800-char embed truncation to both models for parity. Qwen3's 32K native context never overflows — if you swap models, raise `contextSize` or lower `CHUNK_CHARS` in `store/store.mjs` accordingly.
+
 ## What it indexes
 
 - `sources: ["pi-memory"]` — every pi project's memory trio, discovered from pi's session dirs. This is the point: your agent working memory is searchable across all projects.
