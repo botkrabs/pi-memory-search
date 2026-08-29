@@ -38,6 +38,25 @@ Any embedding model works — put its path (and its dimension if not 1024) in th
 
 Config lives at `~/.pi/agent/memory-search.json` (user-owned; the tool runs on defaults if the file is absent). **If you switch models or dims, start from a fresh index** (delete `~/.pi/agent/memory-store/memory.sqlite*`) — mixed vector spaces rank garbage.
 
+### Choosing the embedding model
+
+Three GGUFs were benchmarked head-to-head (CPU, same chunker, 2026-08-29): a 39-query gate over a real agent-memory corpus (identifiers, value→fact lookups, paraphrase, typos, multi-hop, CJK) against a ~900-chunk scratch index.
+
+| Model (Q8_0 GGUF) | Size / dims | Index speed | Query latency | Best for |
+|---|---|---|---|---|
+| **Qwen3-Embedding-0.6B** (default) | 610 MB / 1024-d | 301 ms/ch (~200/min) | ~37 ms | **Multilingual incl. CJK** — best identifier + CJK-fragment recall |
+| **EmbeddingGemma-300M** | 334 MB / 768-d | 85 ms/ch (~700/min, 3.5×) | ~12 ms | Fast drop-in: 2048-token ctx (no config change), strong semantic/paraphrase; CJK *full terms* fine, CJK *fragments* weak; Gemma license (gated on HF) |
+| **bge-small-en-v1.5** | 35 MB / 384-d | 28 ms/ch (~2100/min, 10×) | ~5 ms | **English-only corpora** — near-tie quality at a fraction of the cost; English-only, and its 512-token native context means lowering `CHUNK_CHARS` in `store/store.mjs` to ~480 |
+
+Quality was a near-tie across all three for English queries (the hybrid FTS lane carries exact/identifier matches regardless of model); the differentiator is CJK, where only Qwen3 survived fragment-level probes (a two-character CJK fragment resolved to the right note; the other two returned unrelated same-language documents). So: **keep the default unless your corpus is English-only** — then bge-small or EmbeddingGemma buy a 3.5–10× faster cold index for free quality.
+
+```bash
+huggingface-cli download ggml-org/embeddinggemma-300M-GGUF embeddinggemma-300M-Q8_0.gguf --local-dir ~/models   # 768-d
+huggingface-cli download ggml-org/bge-small-en-v1.5-Q8_0-GGUF bge-small-en-v1.5-q8_0.gguf --local-dir ~/models    # 384-d
+```
+
+Caveats: 39 queries / ~900 chunks is a directional gate, not a statistical benchmark; index speeds scale linearly with your corpus size (a 16k-chunk cold index ≈ 90 min on Qwen3, ~25 min on EmbeddingGemma).
+
 ## What it indexes
 
 - `sources: ["pi-memory"]` — every pi project's memory trio, discovered from pi's session dirs. This is the point: your agent working memory is searchable across all projects.
