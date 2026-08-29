@@ -1,0 +1,353 @@
+[
+ {
+  "set": "T temporal",
+  "q": "关原之战是在哪一年",
+  "target": "關原之戰.md",
+  "ans": "1600"
+ },
+ {
+  "set": "T temporal",
+  "q": "小早川秀秋出生于哪一年",
+  "target": "小早川秀秋.md",
+  "ans": "1582"
+ },
+ {
+  "set": "T temporal",
+  "q": "小早川秀秋是哪一天逝世的",
+  "target": "小早川秀秋.md",
+  "ans": "1602年12月1日"
+ },
+ {
+  "set": "T temporal",
+  "q": "南京化工厂爆炸发生在上午几点",
+  "target": "2010南京化工厂爆炸事件.md",
+  "ans": "10时11分"
+ },
+ {
+  "set": "T temporal",
+  "q": "小行星5008是何时发现的",
+  "target": "1969 RO1.md",
+  "ans": "1991年2月20日"
+ },
+ {
+  "set": "T temporal",
+  "q": "印度板球超级联赛首季是哪年举办的",
+  "target": "印度超級板球聯賽.md",
+  "ans": "2008"
+ },
+ {
+  "set": "T temporal",
+  "q": "堀尾吉晴逝世的完整日期是什么",
+  "target": "堀尾吉晴.md",
+  "ans": "1611年7月26日"
+ },
+ {
+  "set": "T temporal",
+  "q": "柳生宗矩参与大坂之战是哪一年",
+  "target": "柳生宗矩.md",
+  "ans": "1615"
+ },
+ {
+  "set": "T temporal",
+  "q": "小早川秀秋去世时多大年纪",
+  "target": "小早川秀秋.md",
+  "ans": "20歲"
+ },
+ {
+  "set": "T temporal",
+  "q": "安土桃山时代结束于哪一年",
+  "target": "安土桃山時代.md",
+  "ans": "1603"
+ },
+ {
+  "set": "T temporal",
+  "q": "乞力马扎罗山海拔多少米",
+  "target": "乞力馬扎羅山.md",
+  "ans": "5895"
+ },
+ {
+  "set": "T temporal",
+  "q": "柳生宗章是哪一天去世的",
+  "target": "柳生宗章.md",
+  "ans": "1603年12月16日"
+ },
+ {
+  "set": "MH multi-hop",
+  "q": "柳生宗矩的兄长是谁",
+  "target": "柳生宗矩.md",
+  "ans": "宗章"
+ },
+ {
+  "set": "MH multi-hop",
+  "q": "1594年柳生宗矩开始事奉谁",
+  "target": "柳生宗章.md",
+  "ans": "徳川家康"
+ },
+ {
+  "set": "MH multi-hop",
+  "q": "小早川秀秋担任哪个藩的藩主",
+  "target": "小早川秀秋.md",
+  "ans": "岡山"
+ },
+ {
+  "set": "MH multi-hop",
+  "q": "柳生宗章和小早川秀秋都生活在哪个时代",
+  "target": "柳生宗章.md",
+  "ans": "安土桃山",
+  "note": "小早川秀秋.md"
+ },
+ {
+  "set": "MH multi-hop",
+  "q": "澳门的两种官方文字是什么",
+  "target": "澳門.md",
+  "ans": "中文"
+ },
+ {
+  "set": "MH multi-hop",
+  "q": "澳门日常使用的中文是简体还是繁体",
+  "target": "澳門.md",
+  "ans": "繁體中文"
+ },
+ {
+  "set": "MH multi-hop",
+  "q": "荷兰豪达地区除了松饼还以什么产品闻名",
+  "target": "豪达.md",
+  "ans": "奶酪"
+ },
+ {
+  "set": "MH multi-hop",
+  "q": "查拉湖位于哪两个国家的边界",
+  "target": "查拉湖.md",
+  "ans": "坦桑尼亞",
+  "note": "肯尼亚"
+ },
+ {
+  "set": "MH multi-hop",
+  "q": "塔韦塔是哪个国家的城镇",
+  "target": "塔韋塔.md",
+  "ans": "肯亞"
+ },
+ {
+  "set": "MH multi-hop",
+  "q": "小早川秀秋在关原之战中效忠过的大名",
+  "target": "小早川秀秋.md",
+  "ans": "小早川隆景",
+  "note": "關原之戰.md"
+ },
+ {
+  "set": "X adversarial",
+  "q": "柳生宗章的武术著作一共有多少卷",
+  "target": "柳生宗章.md",
+  "note": "absent-from-corpus"
+ },
+ {
+  "set": "X adversarial",
+  "q": "小早川秀秋是什么血型",
+  "target": "小早川秀秋.md",
+  "note": "absent-from-corpus"
+ },
+ {
+  "set": "X adversarial",
+  "q": "查拉湖的湖底最深点叫什么名字",
+  "target": "查拉湖.md",
+  "note": "absent-from-corpus"
+ },
+ {
+  "set": "X adversarial",
+  "q": "南京化工厂爆炸事件中遇难者的赔偿金额是多少",
+  "target": "2010南京化工厂爆炸事件.md",
+  "note": "absent-from-corpus"
+ },
+ {
+  "set": "X adversarial",
+  "q": "荷式松饼的发明者获得过什么奖项",
+  "target": "荷式鬆餅.md",
+  "note": "false-premise"
+ },
+ {
+  "set": "X adversarial",
+  "q": "小早川秀秋是江户幕府的将军吗",
+  "target": "小早川秀秋.md",
+  "note": "false-premise"
+ },
+ {
+  "set": "X adversarial",
+  "q": "堀尾吉晴晚年出家后的法号",
+  "target": "堀尾吉晴.md",
+  "note": "absent-from-corpus"
+ },
+ {
+  "set": "X adversarial",
+  "q": "哥廷根市有一座以哪位皇帝命名的广场",
+  "target": "哥廷根.md",
+  "note": "absent-from-corpus"
+ },
+ {
+  "set": "S script",
+  "q": "高压锅炖牛肉要炖多久",
+  "target": "高壓鍋燉牛肉.md",
+  "ans": "55"
+ },
+ {
+  "set": "S script",
+  "q": "安土桃山时代是哪个将军时代",
+  "target": "安土桃山时代.md",
+  "ans": "織田信長"
+ },
+ {
+  "set": "S script",
+  "q": "荷式松饼最早出现在哪个国家",
+  "target": "荷式鬆餅.md",
+  "ans": "荷蘭"
+ },
+ {
+  "set": "S script",
+  "q": "关原之战东军还是西军获胜",
+  "target": "關原之戰.md",
+  "ans": "東軍"
+ },
+ {
+  "set": "S script",
+  "q": "澳门的官方语言是什么",
+  "target": "澳門.md",
+  "ans": "中文"
+ },
+ {
+  "set": "S script",
+  "q": "T20是哪个运动的比赛规则",
+  "target": "20-20.md",
+  "ans": "板球"
+ },
+ {
+  "set": "M mixed",
+  "q": "Dirichlet 是德国数学家吗,他叫什么中文名",
+  "target": "狄利克雷.md",
+  "ans": "狄利克雷"
+ },
+ {
+  "set": "M mixed",
+  "q": "查拉湖 Lake Chala 位于非洲哪个区域",
+  "target": "查拉湖.md",
+  "ans": "東非"
+ },
+ {
+  "set": "M mixed",
+  "q": "IPL 印度板球超级联赛在哪国举办",
+  "target": "印度超級板球聯賽.md",
+  "ans": "印度"
+ },
+ {
+  "set": "M mixed",
+  "q": "乞力马扎罗山 Kilimanjaro 的地形突起度是多少",
+  "target": "乞力馬扎羅山.md",
+  "ans": "5885"
+ },
+ {
+  "set": "M mixed",
+  "q": "Göttingen 哥廷根是哪个国家的城市",
+  "target": "哥廷根.md",
+  "ans": "德國"
+ },
+ {
+  "set": "M mixed",
+  "q": "Twenty20 规则每队的比赛回合限制",
+  "target": "20-20.md",
+  "ans": "板球"
+ },
+ {
+  "set": "D fact",
+  "q": "哥廷根的人口是多少",
+  "target": "哥廷根.md",
+  "ans": "126,968"
+ },
+ {
+  "set": "D fact",
+  "q": "岐阜县的面积是多少平方公里",
+  "target": "岐阜县.md",
+  "ans": "621.17"
+ },
+ {
+  "set": "D fact",
+  "q": "南京爆炸事故官方公布的死亡人数",
+  "target": "2010南京化工厂爆炸事件.md",
+  "ans": "至少13人"
+ },
+ {
+  "set": "D fact",
+  "q": "秘鲁羽毛球国际赛2010年那届是第几届",
+  "target": "2010年秘魯羽毛球國際賽.md",
+  "ans": "15"
+ },
+ {
+  "set": "D fact",
+  "q": "小行星5008的发现者是谁",
+  "target": "1969 RO1.md",
+  "ans": "杉江淳"
+ },
+ {
+  "set": "D fact",
+  "q": "乞力马扎罗山的海拔与突起度差多少米",
+  "target": "乞力馬扎羅山.md",
+  "ans": "10"
+ },
+ {
+  "set": "D fact",
+  "q": "岐阜县的人口大约多少",
+  "target": "岐阜县.md",
+  "ans": "191万"
+ },
+ {
+  "set": "D fact",
+  "q": "柳生宗章的通称是什么",
+  "target": "柳生宗章.md",
+  "ans": "五郎右衛門"
+ },
+ {
+  "set": "P preference",
+  "q": "咸酥鸡第二次高温快炸用什么温度",
+  "target": "鹹酥雞.md"
+ },
+ {
+  "set": "P preference",
+  "q": "高压锅炖牛肉需要煮多久",
+  "target": "高壓鍋燉牛肉.md",
+  "ans": "55"
+ },
+ {
+  "set": "P preference",
+  "q": "notes 里爌肉是用什么锅做的",
+  "target": "Instant Pot 爌肉.md"
+ },
+ {
+  "set": "P preference",
+  "q": "我的笔记里最常用的锅具",
+  "target": "高壓鍋燉牛肉.md",
+  "note": "either pressure-cooker recipe"
+ },
+ {
+  "set": "W world",
+  "q": "以奶酪闻名的荷兰城市,该国的国花是什么",
+  "target": "豪达.md",
+  "ans": "郁金香"
+ },
+ {
+  "set": "W world",
+  "q": "哥廷根大学所在的城市在哪国",
+  "target": "哥廷根.md",
+  "ans": "德國"
+ },
+ {
+  "set": "W world",
+  "q": "乞力马扎罗山所在国与查拉湖的另一个岸上国家",
+  "target": "乞力馬扎羅山.md",
+  "ans": "肯亞",
+  "note": "查拉湖.md"
+ },
+ {
+  "set": "W world",
+  "q": "IPL 赛事的主办国家与澳门的哪个特征相同(都有葡萄牙殖民历史)",
+  "target": "澳門.md",
+  "ans": "葡萄牙",
+  "note": "印度超級板球聯賽.md"
+ }
+]

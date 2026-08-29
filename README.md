@@ -2,14 +2,14 @@
 
 Hybrid **semantic + keyword** search over pi's own memory — as a pi extension, one tool: `memory_search`.
 
-It indexes every pi project's memory files (`memory.md`, `memory-wiki/`, `memory-daily/`, auto-discovered — zero config), plus any extra paths you add. Queries run a two-lane search (sqlite-vec KNN with cosine re-rank ∥ FTS5/BM25) merged with reciprocal-rank fusion, with exact-identifier promotion so bare values (a port number, an IP address, an internal rule name) rank correctly.
+It indexes every pi project's memory files (`memory.md`, `memory-wiki/`, `memory-daily/`, auto-discovered — zero config), plus any extra paths you add. Queries run a three-lane search (sqlite-vec KNN with cosine re-rank ∥ FTS5/BM25 ∥ FTS5-trigram substring for CJK runs) merged with reciprocal-rank fusion, with exact-identifier promotion so bare values (a port number, an IP address, an internal rule name) rank correctly.
 
-**Everything is local.** Embeddings run on CPU via node-llama-cpp; the index is one SQLite file. No cloud, no API keys, no network, no extra services. The only thing you need is an embedding model GGUF (below).
+**Everything is local.** Embeddings run on CPU via node-llama-cpp (GPU optional, opt-in — see below); the index is one SQLite file. No cloud, no API keys, no network, no extra services. The only thing you need is an embedding model GGUF (below).
 
 ## Install
 
 ```bash
-pi install git:github.com/botkrabs/pi-memory-search@0.0.1
+pi install git:github.com/botkrabs/pi-memory-search@0.0.2
 ```
 
 pi clones the package and runs `npm install` (pulls `node-llama-cpp` + `sqlite-vec`, ~1 GB with platform binaries — once). Remove with `pi remove pi-memory-search` (your index and config are untouched — see below).
@@ -32,11 +32,35 @@ Any embedding model works — put its path (and its dimension if not 1024) in th
   "extraPaths": [],
   "excludePaths": [],
   "modelPath": "~/models/Qwen3-Embedding-0.6B-Q8_0.gguf",
-  "dim": 1024
+  "dim": 1024,
+  "gpu": false,
+  "contextSize": 4096,
+  "threads": 8,
+  "triLane": true
 }
 ```
 
 Config lives at `~/.pi/agent/memory-search.json` (user-owned; the tool runs on defaults if the file is absent). **If you switch models or dims, start from a fresh index** (delete `~/.pi/agent/memory-store/memory.sqlite*`) — mixed vector spaces rank garbage.
+
+The last four keys are performance knobs, all optional:
+
+| key | default | meaning |
+|---|---|---|
+| `gpu` | `false` | `"gpu": -1` puts all embedding layers on the GPU (~30× faster cold index on an RTX 4090, retrieval-identical results). **Requires a local CUDA build** of `node-llama-cpp` (below) — the shipped prebuilt binary is CPU-only, so don't set it unless you built. |
+| `contextSize` | `4096` | max tokens per embedding. 2048 crashes on CJK chunks that tokenize past 2048 tokens (CJK tokenizes denser than English); 4096 covers the chunker's 3,200-char cap for +0.22 GB of KV with no other cost. |
+| `threads` | `min(CPUs, 16)` | embedding threads; node-llama-cpp's own default (6) is too low for modern parts. |
+| `triLane` | `true` | disable the trigram substring lane (it only fires on CJK runs ≥2 chars; English queries are unaffected either way). |
+
+### GPU indexing (optional)
+
+Cold full-index speed is the one thing the CPU path can't scale — a 10k-chunk index is hours on CPU vs ~10 minutes on a 4090. To enable:
+
+```bash
+cd <package dir>/node_modules/node-llama-cpp   # where pi installed the deps
+npm run build                                  # one-time, few minutes, cached in llama/localBuilds
+```
+
+Prereqs: `g++`/`make`, `cmake`, and the NVIDIA CUDA toolkit (the build script auto-detects `nvcc`); the GPU driver at runtime. Then set `"gpu": -1` in `memory-search.json`. VRAM is flat (~1 GB for the 0.6B model + 4096 ctx) regardless of corpus size — chunks are embedded one at a time. Skip it entirely and the CPU prebuilt stays the zero-effort path.
 
 ### Choosing the embedding model
 
@@ -75,6 +99,16 @@ Qwen3 wins every *hard* query — fragments with same-language distractors, sema
 
 One caveat found in the bench: EmbeddingGemma's 2048-token native context overflows long CJK chunks (a 3,200-char CJK chunk crashed it — CJK tokenizes denser than English); the bench applied a 1,800-char embed truncation to both models for parity. Qwen3's 32K native context never overflows — if you swap models, raise `contextSize` or lower `CHUNK_CHARS` in `store/store.mjs` accordingly.
 
+**Bench v2 (2026-08-29, post-trigram/GPU):** 80 CJK queries (22 above re-run + 58 new: temporal, fact/number, multi-hop, simplified↔traditional variants, mixed CN+EN, preferences, world-knowledge, and unanswerable adversarial queries) over zh-wiki-grounded corpora at three scales.
+
+| scale | chunks | correct rank-1 | top-2 |
+|---|---|---|---|
+| 1× | 3,759 | 90% | 93% |
+| 3× | 7,247 | 90% | 93% |
+| 5× | 11,263 | 86% | 92% |
+
+Decay is nearly flat to 3× scale; the 5× slips are short-phrase queries and all recover at top-2. Every v1 rank-1 survived the v2 corpus unchanged. Two honest findings: (1) **unanswerable queries are not rejected** — all 8 adversarial queries returned the correct entity's article at high confidence (0.69–0.86), so the tool will surface a confident wrong-shaped hit for absent facts (backlog: absent-topic signal); (2) file-level retrieval (~90%) beats answer-in-top-3 (~75%) — the right file is usually rank-1, but the specific value can sit in a chunk beyond top-3. Queries: [`bench/cjk-v2-queries.json`](bench/cjk-v2-queries.json) (basenames only).
+
 ## What it indexes
 
 - `sources: ["pi-memory"]` — every pi project's memory trio, discovered from pi's session dirs. This is the point: your agent working memory is searchable across all projects.
@@ -111,8 +145,8 @@ The `pi-memory` source assumes the standard pi memory layout per project — thr
 ## Behavior
 
 - **Session start**: the index rebuilds in the background (hash-incremental — a warm session touches only changed files, ~0 embeddings).
-- **First query of the session**: awaits the pending index, then searches. Cold model load ≈ 2.5 s; cold full index of ~16k chunks ≈ 90 min on CPU (one-time; a warm re-index is seconds).
-- **Results**: ranked hits with `path:line`, source tag, snippet, and lane tags `(vec|fts|vec,fts)` + lane-native score.
+- **First query of the session**: awaits the pending index, then searches. Cold model load ≈ 2.5 s; cold full index of ~16k chunks ≈ 90 min on CPU, ≈ 15 min with `"gpu": -1` (one-time; a warm re-index is seconds either way — hash-keyed skip).
+- **Results**: ranked hits with `path:line`, source tag, snippet, and lane tags `(vec|fts|vec,fts)` + lane-native score. A third tag `fts` (i.e. `vec,fts,fts`) means the trigram substring lane also matched — the strongest CJK-fragment signal.
 - **Index location**: `~/.pi/agent/memory-store/memory.sqlite` (code and deps live with the package; the DB stays in your agent dir so `pi remove` never touches your data).
 
 ## Tools (for tinkerers)
@@ -128,8 +162,9 @@ store/tools/verify.sh "probe one" "probe two"  # integrity counts + probes
 ## Design notes
 
 - **Independence invariant**: zero references to any other agent framework. Uninstalling anything else must not break this tool.
-- **Pinned deps**: `node-llama-cpp` 3.19.0 (CPU) and `sqlite-vec` 0.1.9 in `package.json` — no floating versions.
-- **Ranking**: RRF (k=60) over the two lanes; exact ties break toward dual-lane then FTS; verbatim promotion for value-like single-token queries. Query functions are pure and isolated in `store/memory-search-query.mjs`.
+- **Pinned deps**: `node-llama-cpp` 3.19.0 (CPU prebuilt; local CUDA build optional for `gpu`) and `sqlite-vec` 0.1.9 in `package.json` — no floating versions.
+- **Ranking**: RRF (k=60) over three lanes (vec ∥ token FTS ∥ trigram substring for CJK runs ≥2 chars); exact ties break toward multi-lane, then lane specificity (substring > token > vec); verbatim promotion for value-like single-token queries and all trigram hits. Query functions are pure and isolated in `store/memory-search-query.mjs`.
+- **FTS5 trigram gotcha**: trigram `LIKE` only works **column-qualified** (`WHERE text LIKE ?`); a table-qualified `WHERE chunks_fts_tri LIKE ?` silently returns zero rows.
 - **Known sharp edges** (learned the hard way, fixed): vec0 virtual tables don't honour `INSERT OR REPLACE` (use DELETE+INSERT); identical chunk ids within one file must be de-duped; the DB needs WAL + busy_timeout for concurrent reads; incremental embed keys on *vec-row presence* so crash orphans self-heal.
 
 ## License

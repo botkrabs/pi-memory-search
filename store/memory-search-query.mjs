@@ -51,11 +51,24 @@ export function rrfMerge(lists, k = 60, limit = 25) {
       else byId.set(row.id, { id: row.id, meta: row.meta, score: s, lanes: [li] });
     });
   });
-  // tie-break: more lanes first (dual-lane beats single), then FTS presence —
-  // exact rank ties are weak evidence, and a lexical match is more specific
-  // than a centroid-adjacent vec hit (stable sort otherwise favors the vec lane,
-  // which is inserted first).
+  // tie-break: more lanes first (multi-lane beats single), then lane
+  // specificity — substring (lane 2) > token FTS (lane 1) > vec (lane 0):
+  // exact rank ties are weak evidence, and the more specific the lexical
+  // match, the better (stable sort otherwise favors the vec lane, which is
+  // inserted first).
+  const spec = (l) => (l.includes(2) ? 2 : l.includes(1) ? 1 : 0);
   return [...byId.values()].sort((a, b) =>
-    b.score - a.score || b.lanes.length - a.lanes.length || (b.lanes.includes(1) - a.lanes.includes(1))
+    b.score - a.score || b.lanes.length - a.lanes.length || spec(b.lanes) - spec(a.lanes)
   ).slice(0, limit);
+}
+
+// Longest CJK runs (>= min chars) in a query, de-duped — for the trigram
+// substring lane. unicode61 treats a CJK run as ONE token, so fragments of
+// longer runs (宗矩 of 柳生宗矩) are invisible to the FTS lane; trigram LIKE
+// catches them. EN is deliberately excluded (word-boundary semantics of lane 1
+// are better there; substring EN is noise-prone: kill ⊂ skill/killed).
+export function cjkRuns(text, min = 2, maxRuns = 8) {
+  const m = String(text).match(/[\u3400-\u4dbf\u4e00-\u9fff]{2,}/g);
+  if (!m) return [];
+  return [...new Set(m.filter((r) => r.length >= min))].slice(0, maxRuns);
 }

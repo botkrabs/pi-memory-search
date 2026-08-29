@@ -19,7 +19,7 @@ import { createHash } from "node:crypto";
 import { DatabaseSync } from "node:sqlite";
 import { getLoadablePath as vecLoadablePath } from "sqlite-vec";
 import os from "node:os";
-import { ftsQueryFromText, cosine, rrfMerge, isExcluded } from "./memory-search-query.mjs";
+import { ftsQueryFromText, cjkRuns, cosine, rrfMerge, isExcluded } from "./memory-search-query.mjs";
 
 const HOME = os.homedir();
 export const STORE_DIR = join(HOME, ".pi", "agent", "memory-store");
@@ -170,8 +170,21 @@ function getDb() {
       start_line INTEGER, end_line INTEGER, model TEXT, text TEXT, updated_at INTEGER);
     CREATE VIRTUAL TABLE IF NOT EXISTS chunks_fts USING fts5(
       text, id UNINDEXED, path UNINDEXED, source UNINDEXED, start_line UNINDEXED);
+    CREATE VIRTUAL TABLE IF NOT EXISTS chunks_fts_tri USING fts5(
+      text, id UNINDEXED, path UNINDEXED, source UNINDEXED, start_line UNINDEXED,
+      tokenize = "trigram");
     CREATE VIRTUAL TABLE IF NOT EXISTS chunks_vec USING vec0(id TEXT PRIMARY KEY, embedding FLOAT[${dimFor(loadConfig())}]);
   `);
+  // trigram table was added after the store already had data (2026-08-29) —
+  // one-time backfill, guarded by counts, cheap to re-check at open.
+  if (d.prepare("SELECT COUNT(*) c FROM chunks_fts_tri").get().c === 0
+      && d.prepare("SELECT COUNT(*) c FROM chunks").get().c > 0) {
+    const ins = d.prepare("INSERT INTO chunks_fts_tri(text, id, path, source, start_line) VALUES (?,?,?,?,?)");
+    d.exec("BEGIN");
+    for (const r of d.prepare("SELECT id, text, path, source, start_line FROM chunks").all())
+      ins.run(r.text, r.id, r.path, r.source, r.start_line);
+    d.exec("COMMIT");
+  }
   db = d;
   return d;
 }
@@ -223,6 +236,7 @@ export async function indexNow(cfg) {
         const ph = ids.map(() => "?").join(",");
         d.prepare(`DELETE FROM chunks WHERE id IN (${ph})`).run(...ids);
         d.prepare(`DELETE FROM chunks_fts WHERE id IN (${ph})`).run(...ids);
+        d.prepare(`DELETE FROM chunks_fts_tri WHERE id IN (${ph})`).run(...ids);
         d.prepare(`DELETE FROM chunks_vec WHERE id IN (${ph})`).run(...ids);
       }
       d.prepare("DELETE FROM files WHERE path = ?").run(fp);
@@ -242,13 +256,17 @@ async function upsertFileChunks(d, path, source, chunks, embedFn, model) {
   for (const id of old) if (!newSet.has(id)) {
     d.prepare("DELETE FROM chunks WHERE id = ?").run(id);
     d.prepare("DELETE FROM chunks_fts WHERE id = ?").run(id);
+    d.prepare("DELETE FROM chunks_fts_tri WHERE id = ?").run(id);
     d.prepare("DELETE FROM chunks_vec WHERE id = ?").run(id);
   }
   for (const c of chunks) {
     const isNew = !oldSet.has(c.id);
     d.prepare("INSERT OR REPLACE INTO chunks(id, path, source, start_line, end_line, model, text, updated_at) VALUES (?,?,?,?,?,?,?,?)")
       .run(c.id, path, source, c.start_line, c.end_line, model, c.text, Date.now());
-    if (isNew) d.prepare("INSERT INTO chunks_fts(text, id, path, source, start_line) VALUES (?,?,?,?,?)").run(c.text, c.id, path, source, c.start_line);
+    if (isNew) {
+      d.prepare("INSERT INTO chunks_fts(text, id, path, source, start_line) VALUES (?,?,?,?,?)").run(c.text, c.id, path, source, c.start_line);
+      d.prepare("INSERT INTO chunks_fts_tri(text, id, path, source, start_line) VALUES (?,?,?,?,?)").run(c.text, c.id, path, source, c.start_line);
+    }
   }
   if (embedFn) {
     // Embed anything without a vec row: fresh ids PLUS crash orphans (the 08-28
@@ -279,9 +297,25 @@ async function getEmbedFn(modelPath) {
   embModel = modelPath;
   embReady = (async () => {
     const { getLlama } = await import("node-llama-cpp");
-    const llama = await getLlama({ gpu: false, logLevel: "silent" });
-    const model = await llama.loadModel({ modelPath, contextSize: 2048 });
-    const ctx = await model.createEmbeddingContext();
+    const ecfg = (await loadConfig()) ?? {};
+    // All three are opt-in via memory-search.json; defaults are the safe CPU path.
+    // - gpu: false (default) → CPU. Set "gpu": -1 to put all layers on the GPU —
+    //   ~30× faster cold index on an RTX 4090 (measured), retrieval-identical
+    //   results. Needs a local CUDA build of node-llama-cpp (see README); the
+    //   shipped prebuilt is CPU-only, so a GPU machine without the local build
+    //   must keep gpu false.
+    const gpuMode = ecfg.gpu ?? false;
+    // - contextSize: 4096 (default). 2048 crashes on CJK chunks that tokenize
+    //   past 2048 tokens; 4096 covers the chunker's 3200-char cap for +0.22 GB
+    //   KV with zero other cost (cost scales with actual tokens, not the cap).
+    const ctxSize = Number(ecfg.contextSize) || 4096;
+    // - threads: min(CPU count, 16). node-llama-cpp's default of 6 is too low
+    //   for modern parts; 16 measured +26% on an 8P+12E hybrid CPU, no gain
+    //   beyond that.
+    const threads = Number(ecfg.threads) || Math.min(os.cpus().length, 16);
+    const llama = await getLlama({ gpu: gpuMode, logLevel: "silent" });
+    const model = await llama.loadModel({ modelPath, contextSize: ctxSize });
+    const ctx = await model.createEmbeddingContext({ threads });
     return (text) => {
       const e = ctx.getEmbeddingFor(text);
       return e.then ? e.then((r) => Float32Array.from(r.vector)) : Float32Array.from(e.vector);
@@ -326,10 +360,26 @@ export async function search(query, k = 8, cfg) {
         .map((r) => ({ id: r.id, meta: { ...r, score: -r.s } }));
     } catch { /* malformed FTS query — vector lane still answers */ }
   }
-  if (!laneA.length && !laneB.length) return [];
+  // lane 2: trigram substring for CJK runs (unicode61 can't see fragments of
+  // longer CJK runs; trigram LIKE can). 2-char runs fall back to a table scan
+  // (trigram index needs 3+ chars) — fine at this corpus size. Disable with
+  // cfg.triLane = false. EN is deliberately out of scope (see cjkRuns).
+  let laneC = [];
+  const runs = cjkRuns(query);
+  if (runs.length && cfg?.triLane !== false) {
+    const clause = runs.map(() => "text LIKE ?").join(" AND "); // column-qualified: FTS5 trigram LIKE requires <column> LIKE <pattern> — table-qualified silently returns 0 rows
+    try {
+      laneC = d.prepare(
+        `SELECT id, path, source, start_line, substr(text,1,240) AS snippet FROM chunks_fts_tri
+         WHERE ${clause} ORDER BY length(text) LIMIT ?`
+      ).all(...runs.map((r) => `%${r}%`), CAND)
+        .map((r) => ({ id: r.id, meta: { ...r, score: runs.length } }));
+    } catch { /* schema mismatch etc — lanes 0/1 still answer */ }
+  }
+  if (!laneA.length && !laneB.length && !laneC.length) return [];
 
   const excludes = (cfg?.excludePaths ?? []);
-  let merged = rrfMerge([laneA, laneB], 60, Math.min(k * 3, 75));
+  let merged = rrfMerge([laneA, laneB, laneC], 60, Math.min(k * 3, 75));
   // Verbatim promotion: bare value/identifier queries (single token containing
   // digits/underscore/dot/colon/hyphen/comma, or CJK) — an FTS hit whose FULL
   // text contains the query verbatim leads, relative RRF order preserved.
@@ -343,7 +393,8 @@ export async function search(query, k = 8, cfg) {
         .map((r) => [r.id, r.text.toLowerCase()])
     );
     const needle = query.toLowerCase();
-    const hit = (m) => m.lanes.includes(1) && texts.get(m.id)?.includes(needle);
+    const hit = (m) => m.lanes.includes(2)
+      || (m.lanes.includes(1) && texts.get(m.id)?.includes(needle)); // lane-2: containment already guaranteed by the LIKE
     const promoted = merged.filter(hit);
     if (promoted.length) merged = [...promoted, ...merged.filter((m) => !hit(m))];
   }
@@ -354,7 +405,9 @@ export async function search(query, k = 8, cfg) {
     const lanes = m.lanes.map((li) => (li === 0 ? "vec" : "fts")).join(",");
     const s = (m.lanes.includes(0)
       ? laneA.find((x) => x.id === m.id)?.meta.score
-      : laneB.find((x) => x.id === m.id)?.meta.score) ?? 0;
+      : m.lanes.includes(1)
+        ? laneB.find((x) => x.id === m.id)?.meta.score
+        : m.lanes.includes(2) ? 0.5 : 0); // lane-C-only: nominal substring-hit score
     out.push({ path: m.meta.path, line: m.meta.start_line, source: m.meta.source, snippet: m.meta.snippet, lanes, score: s });
   }
   return out;

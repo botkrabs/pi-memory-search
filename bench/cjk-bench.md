@@ -131,3 +131,51 @@ both models for parity. Qwen3's 32K native context never overflows.
 
 - **Qwen3-0.6B**: **1.** `文化中心站 (高雄市).md` (0.53, vec)  ·  **2.** `文化中心站 (高雄市).md` (0.47, vec)  ·  **3.** `文化中心站 (高雄市).md` (0.45, vec)
 - **EmbeddingGemma-300M**: **1.** `文化中心站 (高雄市).md` (0.38, vec)  ·  **2.** `文化中心站 (高雄市).md` (0.36, vec)  ·  **3.** `文化中心站 (高雄市).md` (0.35, vec)
+
+---
+
+## Bench v2 (2026-08-29, after trigram lane + GPU index)
+
+80 queries = the 22 above (re-run, unchanged) + 58 new gap categories grounded in zh-wiki
+articles: temporal (12), fact/number (8), multi-hop (10), simplified↔traditional script (6),
+mixed CN+EN (6), preference (4), world-knowledge (4), adversarial/unanswerable (8).
+Queries: [cjk-v2-queries.json](cjk-v2-queries.json); 1× per-query results:
+[cjk-v2-results-1x.json](cjk-v2-results-1x.json).
+
+### Scale decay (rank-1 / top-2 file match over the 58 targeted queries)
+
+| scale | chunks | rank-1 | top-2 |
+|---|---|---|---|
+| 1× | 3,759 | 52/58 (90%) | 54/58 (93%) |
+| 3× | 7,247 | 52/58 (90%) | 54/58 (93%) |
+| 5× | 11,263 | 50/58 (86%) | 53/58 (92%) |
+
+Nearly flat to 3×; the 5× slips are short-phrase preference queries and all recover at
+top-2. Temporal (12/12), fact (8/8), mixed-script (6/6), multi-hop (8/10) are
+scale-invariant. Index speed (GPU): 3.7k chunks ≈ 5 min, 11.3k ≈ 11 min.
+
+### 1× per-set detail
+
+| set | n | rank-1 | top-2 | answer in top-3 |
+|---|---|---|---|---|
+| temporal | 12 | 12 | 12 | 10 |
+| fact/number | 8 | 8 | 8 | 5 |
+| multi-hop | 10 | 8 | 8 | 9 |
+| mixed script | 6 | 6 | 6 | 5 |
+| script variant | 6 | 5 | 6 | 4 |
+| world-knowledge | 4 | 3 | 3 | 0 (answers not in corpus, by design) |
+| preference | 4 | 2 | 3 | — |
+| adversarial | 8 | 8 | 8 | — (see below) |
+
+### Findings
+
+1. **v1 consistency**: every v1 rank-1 survived the v2 corpus; one v1 top-2 promoted to
+   rank-1. The trigram lane + GPU index changed no v1 ranking.
+2. **Adversarial gap**: all 8 unanswerable queries (absent fact or false premise) return
+   the correct entity's article at rank-1, scores 0.69–0.86. Entity grounding is perfect;
+   rejection is zero — a known backlog item (absent-topic signal).
+3. **Chunk granularity**: file-level retrieval ~90% vs answer-in-top-3 ~75%. Most
+   answer misses are the right file at rank-1 with the value in a chunk beyond top-3
+   (infoboxes, recipe steps).
+4. **Script variants**: simplified queries resolve to traditional-titled articles and
+   vice versa; one query ties both script variants at top-2 with equal scores.
