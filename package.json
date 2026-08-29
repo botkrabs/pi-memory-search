@@ -1,6 +1,6 @@
 {
   "name": "pi-memory-search",
-  "version": "0.0.1",
+  "version": "0.1.3",
   "description": "Hybrid semantic + keyword search over pi's own memory files. Local CPU embeddings, no cloud, no API keys, no extra services.",
   "keywords": [
     "pi-package",
@@ -15,9 +15,7 @@
     "url": "git+https://github.com/botkrabs/pi-memory-search.git"
   },
   "pi": {
-    "extensions": [
-      "./extensions"
-    ]
+    "extensions": ["./extensions"]
   },
   "dependencies": {
     "node-llama-cpp": "3.19.0",
