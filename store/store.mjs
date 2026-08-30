@@ -192,11 +192,35 @@ function getDb() {
 const sha1 = (s) => createHash("sha1").update(s).digest("hex");
 
 // ---------- indexing (incremental, hash-based) ----------
-export async function indexNow(cfg) {
+/**
+ * indexNow(cfg, onlySource?, force?) — incremental index pass.
+ * onlySource: restrict BOTH the walk and the prune to one source label
+ * (e.g. "llm-wiki", "my_second_brain", "memory"). Other sources are left
+ * completely untouched — including their prune (a bare scope-restricted
+ * config would otherwise make the prune pass delete every out-of-scope file).
+ * Unknown/typo source = safe no-op (nothing walked, nothing pruned).
+ * force (ONLY meaningful with onlySource): first wipe that source's rows
+ * (chunks + FTS + trigram + vec + files), so the walk re-embeds every file
+ * of that source from scratch. Full-store force stays "delete the DB files";
+ * force without a source is refused here on purpose.
+ */
+export async function indexNow(cfg, onlySource, force) {
   cfg = cfg ?? loadConfig();
   if (!cfg || cfg.enabled === false) return { indexed: 0, skipped: "disabled" };
+  if (force && !onlySource)
+    return { indexed: 0, skipped: "force requires a source (full force = delete DB files)" };
   const d = getDb();
   const paths = scopePaths(cfg);
+  if (force && onlySource) {
+    // source-scoped wipe: capture paths first (files table has no source col),
+    // then clear all of this source's rows. vec has no source col → join by id.
+    const paths2 = d.prepare("SELECT DISTINCT path FROM chunks WHERE source = ?").all(onlySource).map((r) => r.path);
+    d.prepare("DELETE FROM chunks_vec WHERE id IN (SELECT id FROM chunks WHERE source = ?)").run(onlySource);
+    d.prepare("DELETE FROM chunks WHERE source = ?").run(onlySource);
+    d.prepare("DELETE FROM chunks_fts WHERE source = ?").run(onlySource);
+    d.prepare("DELETE FROM chunks_fts_tri WHERE source = ?").run(onlySource);
+    for (const p of paths2) d.prepare("DELETE FROM files WHERE path = ?").run(p);
+  }
 
   // 1) walk scope, chunk changed/ new files (embeddings lazy: model loads only
   //    if there is actually something new to embed)
@@ -212,6 +236,7 @@ export async function indexNow(cfg) {
   for (const p of paths) {
     const isLane = lanePaths.has(p);
     const source = isLane ? "memory" : p.split("/").filter(Boolean).pop();
+    if (onlySource && source !== onlySource) continue; // source-scoped run
     const files = statSync(p).isDirectory() ? walkFiles(p, []) : [p];
     for (const fp of files) {
       if (isExcluded(fp, excludes)) continue; // excluded: skip indexing; prune below removes stale chunks
@@ -228,7 +253,11 @@ export async function indexNow(cfg) {
     }
   }
   // 2) prune: files that vanished (deleted or dropped out of scope)
-  const known = d.prepare("SELECT path FROM files").all().map((r) => r.path);
+  //    source-scoped run: prune only that source's own files (from the chunks
+  //    table); files of other sources are invisible to this pass.
+  const known = onlySource
+    ? d.prepare("SELECT DISTINCT path FROM chunks WHERE source = ?").all(onlySource).map((r) => r.path)
+    : d.prepare("SELECT path FROM files").all().map((r) => r.path);
   for (const fp of known) {
     if (!keepFileHashes.has(fp)) {
       const ids = d.prepare("SELECT id FROM chunks WHERE path = ?").all(fp).map((r) => r.id);
@@ -242,7 +271,7 @@ export async function indexNow(cfg) {
       d.prepare("DELETE FROM files WHERE path = ?").run(fp);
     }
   }
-  return { indexed: embedded, files: paths.length };
+  return { indexed: embedded, files: paths.length, source: onlySource ?? null };
 }
 
 async function upsertFileChunks(d, path, source, chunks, embedFn, model) {
