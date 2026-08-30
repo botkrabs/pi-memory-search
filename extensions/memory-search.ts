@@ -7,8 +7,13 @@
  *
  * Scope: ~/.pi/agent/memory-search.json — sources: ["pi-memory"] = every pi
  * project's memory.md/memory-wiki/memory-daily (auto-discovered from pi
- * session dirs) + extraPaths, minus excludePaths. Index runs in the
- * background at session start; queries await a pending index.
+ * session dirs) + extraPaths, minus excludePaths.
+ *
+ * Indexing is LAZY: nothing runs at session start; the incremental pass
+ * fires on the session's first memory_search call, and queries await it
+ * (later calls await the already-resolved promise — a no-op). Rationale:
+ * sessions that never search pay zero, and startup is quiet. Explicit
+ * syncs exist outside the tool (reindex scripts / manual commands).
  */
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 import { Type } from "typebox";
@@ -16,15 +21,26 @@ import { Type } from "typebox";
 import { indexNow, searchDetailed, loadConfig } from "../store/store.mjs";
 
 let pendingIndex: Promise<unknown> | null = null;
+let indexStarted = false;
 
 export default function (pi: ExtensionAPI) {
-  pendingIndex = (async () => {
-    const cfg = loadConfig();
-    if (!cfg || cfg.enabled === false) return;
-    const t0 = Date.now();
-    const r = await indexNow(cfg);
-    if (r?.indexed) console.log(`[memory-search] indexed ${r.indexed} chunk(s) in ${Date.now() - t0}ms`);
-  })().catch((e) => console.warn("[memory-search] index failed:", e?.message ?? e));
+  // Factory re-runs per session (start/reload): reset so the new session's
+  // first query triggers a fresh incremental pass.
+  pendingIndex = null;
+  indexStarted = false;
+
+  const startIndex = (): Promise<unknown> | null => {
+    if (indexStarted) return pendingIndex;
+    indexStarted = true;
+    pendingIndex = (async () => {
+      const cfg = loadConfig();
+      if (!cfg || cfg.enabled === false) return;
+      const t0 = Date.now();
+      const r = await indexNow(cfg);
+      if (r?.indexed) console.log(`[memory-search] indexed ${r.indexed} chunk(s) in ${Date.now() - t0}ms`);
+    })().catch((e) => console.warn("[memory-search] index failed:", e?.message ?? e));
+    return pendingIndex;
+  };
 
   pi.registerTool({
     name: "memory_search",
@@ -47,7 +63,10 @@ export default function (pi: ExtensionAPI) {
     async execute(_id, params) {
       const k = Math.min(Math.max(1, Math.round(params.k ?? 8)), 25);
       try {
-        if (pendingIndex) { await pendingIndex; pendingIndex = null; }
+        // Lazy index: first call of the session runs (and awaits) the
+        // incremental pass; later calls await the resolved promise (no-op).
+        const p = startIndex();
+        if (p) await p;
         const t0 = Date.now();
         const { hits, coverage } = await searchDetailed(params.query, k, loadConfig(), Array.isArray(params.sources) ? params.sources : undefined);
         if (!hits.length) return { content: [{ type: "text", text: "no results" }], details: {} };
