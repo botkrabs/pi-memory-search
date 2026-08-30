@@ -1,6 +1,6 @@
 {
   "name": "pi-memory-search",
-  "version": "0.0.2",
+  "version": "0.0.8",
   "description": "Hybrid semantic + keyword search over pi's own memory files. Local CPU embeddings, no cloud, no API keys, no extra services.",
   "keywords": [
     "pi-package",

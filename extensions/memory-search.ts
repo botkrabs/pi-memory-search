@@ -76,9 +76,18 @@ export default function (pi: ExtensionAPI) {
         const cov = coverage.missing.length
           ? `\ncoverage: NOT in top hits: ${coverage.missing.join(", ")} — topic may not be covered; verify before asserting`
           : "";
+        // Same-file crowding hint (phase 2 A, 2026-08-30): ≥2 of the top-3 hits from
+        // one file means the specific answer may sit in a sibling chunk below top-3 —
+        // tell the agent to grep the file rather than trust the snippets alone.
+        const seen = new Map<string, number>();
+        for (const h of hits.slice(0, 3)) seen.set(h.path, (seen.get(h.path) ?? 0) + 1);
+        const crowdPath = [...seen.entries()].find(([, n]) => n >= 2)?.[0];
+        const crowd = crowdPath
+          ? `\nsame file dominates top-3: ${crowdPath} — the specific answer may be in another chunk of that file; grep it before asserting`
+          : "";
         return {
-          content: [{ type: "text", text: `memory_search: ${params.query}\n${out}${cov}\n(${Date.now() - t0}ms, k=${k})` }],
-          details: { hits: hits.length, missing: coverage.missing },
+          content: [{ type: "text", text: `memory_search: ${params.query}\n${out}${cov}${crowd}\n(${Date.now() - t0}ms, k=${k})` }],
+          details: { hits: hits.length, missing: coverage.missing, crowd: crowdPath ?? null },
         };
       } catch (e) {
         const m = String(e?.message ?? e);

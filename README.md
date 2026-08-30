@@ -9,7 +9,7 @@ It indexes every pi project's memory files (`memory.md`, `memory-wiki/`, `memory
 ## Install
 
 ```bash
-pi install git:github.com/botkrabs/pi-memory-search@0.0.2
+pi install git:github.com/botkrabs/pi-memory-search@0.0.8
 ```
 
 pi clones the package and runs `npm install` (pulls `node-llama-cpp` + `sqlite-vec`, ~1 GB with platform binaries — once). Remove with `pi remove pi-memory-search` (your index and config are untouched — see below).
